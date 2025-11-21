@@ -1,0 +1,23 @@
+@import './responsive.scss';
+
+
+.layout{
+          background-color: aqua;
+          height: 100vh;
+          width: 1336px;
+          margin-left: auto;
+          margin-right: auto;
+          padding-left: 20px;
+          padding-right: 20px;
+          @include lg{
+          background-color: green;
+}
+@include md{
+          background-color: yellow;
+}
+@include sm{
+          background-color: black;
+}
+
+
+}
