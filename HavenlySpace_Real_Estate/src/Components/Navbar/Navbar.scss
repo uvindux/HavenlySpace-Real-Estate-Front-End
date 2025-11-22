@@ -1,7 +1,86 @@
+@import"../../responsive.scss";
+
 nav{
           display:  flex;
           justify-content: space-between;
           height: 100px;
           align-items: center;
 
+          a{
+                    text-decoration: none;
+                 
+                    font-weight: 500;
+                    font-size: 18px;
+                  transition: color 0.3s ease;
+
+                    &:hover{
+                             scale:1.05;
+                    }
+                    @include sm{
+                              display: none;
+                    }
+
+          }
+
+          .left{
+                    display: flex;
+                    flex: 3;
+                    align-items: center;
+                    gap: 20px;
+           .Logo{
+                    width: 120px;
+                    font-weight:20px ;
+                    display: flex;
+                    align-items: center;
+                    gap:10px;
+
+                    img{
+                              width: 200px;
+
+
+                    }
+
+          }
+
+          }
+       
+          .right{
+                    flex: 1;
+                    display: flex;
+                    justify-content: flex-end;
+                    align-items: center;
+                    gap: 20px;
+                    background-color: rgb(137, 138, 138);
+                    height: 100%;
+                    margin-right: 0px;
+
+                    button{
+                              padding: 10px 15px;
+                              border: none;
+                              background-color: teal;
+                              color: white;
+                              border-radius: 5px;
+                              cursor: pointer;
+
+                    }
+                    .LoginBtn{
+                              padding: 10px 15px;
+                              border: none;
+                              background-color: rgba(0, 128, 128, 0);
+                              color: white;
+                              border-radius: 5px;
+                              cursor: pointer;
+                              text-decoration: none;
+                             
+                    }
+                    .RegisterBtn{
+                              padding: 10px 15px;
+                              border: none;
+                              background-color: orange;
+                              color: white;
+                              border-radius: 5px;
+                              cursor: pointer;
+                              margin-right: 10px; text-decoration: none;
+                    }
+          }
 }

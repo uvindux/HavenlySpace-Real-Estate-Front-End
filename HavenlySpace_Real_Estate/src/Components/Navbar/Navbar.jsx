@@ -4,8 +4,8 @@ function Navbar() {
   return (
     <nav>
           <div className="left">
-            <a href="/">
-            <img src="/logo.png" alt="" srcset="" />
+            <a href="/"className="Logo">
+            <img src="../../logo.png" alt="" srcset="" />
             <span>HavenlySpace</span>
             </a>
             <a href="http://">Home</a>
@@ -15,8 +15,8 @@ function Navbar() {
           </div>
           <div className="right">
 
-            <a href="http://">SIGN IN</a>
-            <a href="http://">SIGN UP</a>
+            <a href="http://" className='LoginBtn'>Login</a>
+            <a href="http://" className='RegisterBtn'>Registration</a>
           </div>
     </nav>
   )
