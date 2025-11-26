@@ -1,0 +1,21 @@
+.HomePage {
+          display: flex;
+          background-color: whitesmoke;
+          height: 100%;
+
+          .textContainer{
+                    flex: 3;
+
+          }
+          .imageContainer{
+                    flex: 2;
+
+
+          }
+          img{
+                    width: 500px;
+          }
+          .Wrapper{
+                    width: 80%;
+          }
+}

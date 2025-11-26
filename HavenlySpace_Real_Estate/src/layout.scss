@@ -11,6 +11,8 @@
           padding-right: 20px;
           @include lg{
           background-color: green;
+          display: flex;
+          flex-direction: column;
 }
 @include md{
           background-color: rgb(255, 255, 255);
@@ -20,4 +22,8 @@
 }
 
 
+}
+.Content{
+          flex: 1;
+          background-color: aqua;
 }

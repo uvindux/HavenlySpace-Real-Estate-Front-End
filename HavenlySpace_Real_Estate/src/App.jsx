@@ -2,6 +2,7 @@
 import Navbar from './Components/Navbar/Navbar'
 import './index.scss'
 import './layout.scss'
+import Homepage from './routes/Homepage/Homepage.jsx'
 
 
 function App() {
@@ -9,7 +10,12 @@ function App() {
   return (
     <>
     <div className='layout'>
-     <Navbar/>
+    <div className="Navbar">
+      <Navbar/>
+    </div>
+    <div className="Content">
+       <Homepage/>
+    </div>
      
     </div>
     
