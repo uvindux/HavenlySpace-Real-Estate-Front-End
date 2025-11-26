@@ -5,6 +5,7 @@
 
           .textContainer{
                     flex: 3;
+                    
 
           }
           .imageContainer{
@@ -16,6 +17,31 @@
                     width: 500px;
           }
           .Wrapper{
-                    width: 80%;
+                    width: 90%;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 20px;
+                    height: 100%;
+                     padding-left: 50px;
+
+                    .MainHeader{
+                              font-size: 40px;
+                              margin-top: 140px;
+                             
+                    }
+          }
+          .Boxes{
+                    display: flex;
+                    justify-content: left;
+                    gap: 50px;
+                    
+                    .Number{
+                              font-size: 30px;
+                    }
+                    .Description{
+                              font-size: 15px;
+                              color: gray;
+                              font-weight: 200;
+                    }
           }
 }
