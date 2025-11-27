@@ -1,11 +1,14 @@
 import React from 'react'
 import './Homepage.scss'
 import SearchBar from '../../Components/SeachBAr/SearchBar.jsx'
+import Navbar from '../../Components/Navbar/Navbar.jsx'
 
 
 function Homepage() {
   return (
-    <div className="HomePage">
+    <>
+      
+      <div className="HomePage">
       <div className="textContainer">
         <div className="Wrapper">
           <h1 className='MainHeader'>Find Real Estate & Get Your Dream Place </h1>
@@ -36,6 +39,9 @@ function Homepage() {
       <div className="imageContainer"><img src="/bg.png" alt="" srcset="" /></div>
 
     </div>
+    </>
+ 
+    
   )
 }
 
