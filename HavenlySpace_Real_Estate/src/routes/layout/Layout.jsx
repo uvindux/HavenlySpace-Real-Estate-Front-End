@@ -11,7 +11,7 @@ function Layout() {
                                                   <Navbar/>
                                         </div>
                                         <div className="Content">
-                                                  <!-- Render the matched child route component here -->
+                                                 {/* Render the matched child route here */}
                                                   <Outlet/>
                                                  
                                         </div>

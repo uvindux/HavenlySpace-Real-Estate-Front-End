@@ -2,9 +2,9 @@ import React, { useState } from 'react'
 import "./SearchBar.scss";
 
 function SearchBar() {
-          const types = ["buy", "rent"];
+          const types = ["Buy", "Rent"];
           const [query, setquery] = useState({
-                    type: "buy",
+                    type: "Buy",
                     location: "",
                     minPrice: "",
                     maxPrice: ""
