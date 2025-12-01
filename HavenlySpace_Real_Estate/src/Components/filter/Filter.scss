@@ -1,0 +1,90 @@
+div {
+          max-width: 900px;
+          margin: 0 auto;
+          padding: 20px;
+
+          h1 {
+                    font-size: 26px;
+                    font-weight: 600;
+                    margin-bottom: 25px;
+
+                    b {
+                              color: #0077ff;
+                    }
+          }
+
+          .top,
+          .bottom {
+                    display: flex;
+                    flex-wrap: wrap;
+                    gap: 20px;
+                    padding: 20px;
+                    background: #fff;
+                    border-radius: 12px;
+                    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+                    margin-bottom: 25px;
+          }
+
+          .item {
+                    display: flex;
+                    flex-direction: column;
+                    min-width: 200px;
+                    flex: 1;
+
+                    label {
+                              font-size: 14px;
+                              font-weight: 500;
+                              margin-bottom: 6px;
+                              color: #444;
+                    }
+
+                    input,
+                    select {
+                              padding: 12px 14px;
+                              border: 1px solid #ccc;
+                              border-radius: 8px;
+                              font-size: 15px;
+                              transition: all 0.3s ease;
+
+                              &:focus {
+                                        border-color: #0077ff;
+                                        box-shadow: 0 0 0 3px rgba(0, 119, 255, 0.15);
+                                        outline: none;
+                              }
+                    }
+          }
+
+          .SearchButon {
+                    padding: 12px 22px;
+                    background: #0077ff;
+                    color: #fff;
+                    border: none;
+                    border-radius: 8px;
+                    font-size: 16px;
+                    cursor: pointer;
+                    transition: 0.3s ease;
+                    margin-top: auto;
+
+                    &:hover {
+                              background: #005fcc;
+                    }
+
+                    &:active {
+                              transform: scale(0.97);
+                    }
+          }
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 600px) {
+          div {
+                    .item {
+                              min-width: 100%;
+                    }
+
+                    .SearchButon {
+                              width: 100%;
+                    }
+          }
+}
