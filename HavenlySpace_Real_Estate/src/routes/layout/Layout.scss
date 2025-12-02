@@ -1,31 +1,33 @@
 @import './responsive.scss';
 
-
-.layout{
+.layout {
           background-color: aqua;
-          height: auto;
-                    overflow-x: hidden;
-                    overflow-y: auto;
-          width: 1336px;
-          margin-left: auto;
-          margin-right: auto;
-          padding-left: 20px;
-          padding-right: 20px;
-          @include lg{
-          background-color: green;
-          display: flex;
-          flex-direction: column;
-}
-@include md{
-          background-color: rgb(255, 255, 255);
-}
-@include sm{
-          background-color: black;
+          min-height: 100vh; // Full screen
+          width: 100%; // IMPORTANT: remove the fixed 1336px width
+          max-width: 1336px; // Center the content but allow shrinking
+          margin: 0 auto;
+          padding: 20px;
+          box-sizing: border-box;
+
+          overflow-x: hidden; // Good
+          overflow-y: visible; // Let pages handle their own scrolling
+
+          @include lg {
+                    background-color: green;
+                    display: flex;
+                    flex-direction: column;
+          }
+
+          @include md {
+                    background-color: white;
+          }
+
+          @include sm {
+                    background-color: black;
+          }
 }
 
-
-}
-.Content{
+.Content {
           flex: 1;
-          background-color: rgb(255, 255, 255);
+          background-color: white;
 }

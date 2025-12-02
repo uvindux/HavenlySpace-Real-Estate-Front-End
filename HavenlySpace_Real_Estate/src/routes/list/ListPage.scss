@@ -1,12 +1,39 @@
-.ListPage{
+.ListPage {
           display: flex;
-          height: 100%;
-          flex: 3;
+          height: calc(100vh - 80px); // FULL PAGE minus navbar
+          margin-top: 10px; // pushes content under navbar
+          width: 100%;
+          overflow-x: hidden;
 }
-.wrapper{
-          padding-right: 50px;
+
+/* LEFT SIDE */
+.filterComponent {
+          flex: 3;
+          height: 100%;
+          overflow-y: auto; // enables scrolling
+          padding: 20px 20px;
+          box-sizing: border-box;
+}
+
+.wrapper {
           display: flex;
           flex-direction: column;
-          gap: 50px;
-          overflow-y: scroll;
+          gap: 30px;
+          overflow-y: hidden;
+}
+
+/* RIGHT SIDE (map) */
+.mapComponent {
+          flex: 1;
+          height: 100%;
+          position: sticky;
+          top: 80px; // aligns with navbar
+          padding: 20px;
+          box-sizing: border-box;
+
+          .Map {
+                    height: 100%;
+                    width: 100%;
+                    border-radius: 10px;
+          }
 }
