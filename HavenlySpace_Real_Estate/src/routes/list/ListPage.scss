@@ -1,12 +1,14 @@
 .ListPage{
           display: flex;
           height: 100%;
-          flex: 3;
+          width: 2500px;
+          padding-left: 30px;
+          padding-top: 20px;
 }
 .wrapper{
           padding-right: 50px;
           display: flex;
           flex-direction: column;
           gap: 50px;
-          overflow-y: scroll;
+         
 }

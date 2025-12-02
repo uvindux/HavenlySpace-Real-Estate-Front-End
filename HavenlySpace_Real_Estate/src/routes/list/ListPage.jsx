@@ -19,9 +19,7 @@ function ListPage() {
         </div>
       </div>
 
-      <div className="mapComponent">
-        <h1>Map</h1>
-      </div>
+      
     </div>
   )
 }
