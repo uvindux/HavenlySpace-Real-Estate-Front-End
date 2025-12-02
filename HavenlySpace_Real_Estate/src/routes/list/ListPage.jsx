@@ -3,7 +3,6 @@ import Listdata from '../../lib/DummyData'
 import Filter from '../../Components/filter/Filter'
 import Card from '../../Components/card/Card'
 import './ListPage.scss'
-import Map from '../../Components/map/Map'
 
 function ListPage() {
   const data = Listdata; // 👈 use lowercase to match the map()
@@ -21,7 +20,7 @@ function ListPage() {
       </div>
 
       <div className="mapComponent">
-        <Map item={data} />
+        <h1>Map</h1>
       </div>
     </div>
   )
