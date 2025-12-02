@@ -2,7 +2,7 @@ const Listdata = [
           {
                     id: 1,
                     title: "A Great Apartment Next to the Beach!",
-                    img: "https://images.pexels.com/photos/1918291/pexels-photo-1918291.jpeg",
+                    img: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750",
                     bedRooms: 2,
                     bathRooms: 1,
                     price: 1000,
@@ -13,7 +13,7 @@ const Listdata = [
           {
                     id: 2,
                     title: "An Awesome Apartment Near the Park! Almost too good to be true!",
-                    img: "https://images.pexels.com/photos/1428348/pexels-photo-1428348.jpeg",
+                    img: "https://images.unsplash.com/photo-1570129477492-45c003edd2be",
                     bedRooms: 3,
                     bathRooms: 2,
                     price: 1500,
@@ -24,7 +24,7 @@ const Listdata = [
           {
                     id: 3,
                     title: "Modern Apartment With City View",
-                    img: "https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg",
+                    img: "https://images.unsplash.com/photo-1527030280862-64139fba04ca",
                     bedRooms: 2,
                     bathRooms: 1,
                     price: 1200,
@@ -35,7 +35,7 @@ const Listdata = [
           {
                     id: 4,
                     title: "Cozy Studio in the City Center",
-                    img: "https://images.pexels.com/photos/1454806/pexels-photo-1454806.jpeg",
+                    img: "https://images.unsplash.com/photo-1507089947368-19c1da9775ae",
                     bedRooms: 1,
                     bathRooms: 1,
                     price: 800,
@@ -46,7 +46,7 @@ const Listdata = [
           {
                     id: 5,
                     title: "Spacious Family Home With Garden",
-                    img: "https://images.pexels.com/photos/106399/pexels-photo-106399.jpeg",
+                    img: "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2",
                     bedRooms: 4,
                     bathRooms: 2,
                     price: 1800,
@@ -57,7 +57,7 @@ const Listdata = [
           {
                     id: 6,
                     title: "Stylish Apartment Close to the River",
-                    img: "https://images.pexels.com/photos/4392270/pexels-photo-4392270.jpeg",
+                    img: "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267",
                     bedRooms: 2,
                     bathRooms: 2,
                     price: 1400,
@@ -68,7 +68,7 @@ const Listdata = [
           {
                     id: 7,
                     title: "Penthouse With Rooftop Terrace",
-                    img: "https://images.pexels.com/photos/439391/pexels-photo-439391.jpeg",
+                    img: "https://images.unsplash.com/photo-1502673530728-f79b4cab31b1",
                     bedRooms: 3,
                     bathRooms: 2,
                     price: 2300,
@@ -79,7 +79,7 @@ const Listdata = [
           {
                     id: 8,
                     title: "Student-Friendly Flat Near University",
-                    img: "https://images.pexels.com/photos/271639/pexels-photo-271639.jpeg",
+                    img: "https://images.unsplash.com/photo-1523217582562-09d0def993a6",
                     bedRooms: 3,
                     bathRooms: 1,
                     price: 1100,
@@ -90,7 +90,7 @@ const Listdata = [
           {
                     id: 9,
                     title: "Minimalist Studio for Young Professionals",
-                    img: "https://images.pexels.com/photos/37347/office-room-workspace-coworking.jpeg",
+                    img: "https://images.unsplash.com/photo-1519710164239-da123dc03ef4",
                     bedRooms: 1,
                     bathRooms: 1,
                     price: 950,
@@ -101,7 +101,7 @@ const Listdata = [
           {
                     id: 10,
                     title: "Large House Perfect for Families",
-                    img: "https://images.pexels.com/photos/259588/pexels-photo-259588.jpeg",
+                    img: "https://images.unsplash.com/photo-1598928506311-c55ded1f1387",
                     bedRooms: 5,
                     bathRooms: 3,
                     price: 2100,
@@ -112,7 +112,7 @@ const Listdata = [
           {
                     id: 11,
                     title: "Duplex Apartment With Home Office",
-                    img: "https://images.pexels.com/photos/2102587/pexels-photo-2102587.jpeg",
+                    img: "https://images.unsplash.com/photo-1502672023488-70e25813eb80",
                     bedRooms: 3,
                     bathRooms: 2,
                     price: 1700,
@@ -123,7 +123,7 @@ const Listdata = [
           {
                     id: 12,
                     title: "Cozy Cottage-Style Flat",
-                    img: "https://images.pexels.com/photos/2716398/pexels-photo-2716398.jpeg",
+                    img: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c",
                     bedRooms: 2,
                     bathRooms: 1,
                     price: 1050,
@@ -134,5 +134,3 @@ const Listdata = [
 ];
 
 export default Listdata;
-
-

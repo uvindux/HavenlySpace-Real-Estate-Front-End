@@ -1,0 +1,6 @@
+html,
+body {
+          height: auto;
+          overflow-x: hidden;
+          overflow-y: auto;
+}
