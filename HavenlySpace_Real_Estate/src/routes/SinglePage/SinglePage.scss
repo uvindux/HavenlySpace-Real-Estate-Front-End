@@ -1,0 +1,18 @@
+.singlePage{
+          display: flex;
+          height:   100%;
+          .details{
+                    flex:3;
+                    background-color: red;
+                    .wrapper{
+                              padding-right: 50px;
+                              display: flex;
+                              flex-direction: column;
+                              gap: 50px;
+                    }
+          }
+          .features{
+                    flex:1;
+                    background-color: blue;
+          }
+}

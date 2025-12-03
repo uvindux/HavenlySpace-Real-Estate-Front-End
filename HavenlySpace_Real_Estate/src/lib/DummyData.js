@@ -134,3 +134,372 @@ const Listdata = [
 ];
 
 export default Listdata;
+
+
+
+export const SinglepostsData = [
+          {
+                    id: 1,
+                    title: "Beautiful Apartment",
+                    price: 1200,
+                    images: [
+                              "https://images.pexels.com/photos/1918291/pexels-photo-1918291.jpeg",
+                              "https://images.pexels.com/photos/1428348/pexels-photo-1428348.jpeg",
+                              "https://images.pexels.com/photos/2062426/pexels-photo-2062426.jpeg",
+                              "https://images.pexels.com/photos/2467285/pexels-photo-2467285.jpeg",
+                    ],
+                    bedRooms: 2,
+                    bathroom: 1,
+                    size: 861,
+                    latitude: 51.5074,
+                    longitude: -0.1278,
+                    city: "London",
+                    address: "1234 Broadway St",
+                    school: "250m away",
+                    bus: "100m away",
+                    restaurant: "50m away",
+                    description:
+                              "Modern apartment with excellent lighting and elegant interior design.",
+          },
+
+          {
+                    id: 2,
+                    title: "Cozy Studio Flat",
+                    price: 900,
+                    images: [
+                              "https://images.pexels.com/photos/271624/pexels-photo-271624.jpeg",
+                              "https://images.pexels.com/photos/271743/pexels-photo-271743.jpeg",
+                              "https://images.pexels.com/photos/271639/pexels-photo-271639.jpeg",
+                              "https://images.pexels.com/photos/271658/pexels-photo-271658.jpeg",
+                    ],
+                    bedRooms: 1,
+                    bathroom: 1,
+                    size: 450,
+                    latitude: 40.7128,
+                    longitude: -74.006,
+                    city: "New York",
+                    address: "55 Madison Ave",
+                    school: "300m away",
+                    bus: "150m away",
+                    restaurant: "80m away",
+                    description:
+                              "Compact and cozy studio located in the heart of the city with modern amenities.",
+          },
+
+          {
+                    id: 3,
+                    title: "Luxury Penthouse",
+                    price: 3500,
+                    images: [
+                              "https://images.pexels.com/photos/374079/pexels-photo-374079.jpeg",
+                              "https://images.pexels.com/photos/276724/pexels-photo-276724.jpeg",
+                              "https://images.pexels.com/photos/259962/pexels-photo-259962.jpeg",
+                              "https://images.pexels.com/photos/2102587/pexels-photo-2102587.jpeg",
+                    ],
+                    bedRooms: 4,
+                    bathroom: 3,
+                    size: 2100,
+                    latitude: 34.0522,
+                    longitude: -118.2437,
+                    city: "Los Angeles",
+                    address: "987 Sunset Blvd",
+                    school: "500m away",
+                    bus: "200m away",
+                    restaurant: "120m away",
+                    description:
+                              "A spacious penthouse offering skyline views and premium luxury features.",
+          },
+
+          {
+                    id: 4,
+                    title: "Modern Family House",
+                    price: 1800,
+                    images: [
+                              "https://images.pexels.com/photos/1396122/pexels-photo-1396122.jpeg",
+                              "https://images.pexels.com/photos/259588/pexels-photo-259588.jpeg",
+                              "https://images.pexels.com/photos/276551/pexels-photo-276551.jpeg",
+                              "https://images.pexels.com/photos/259907/pexels-photo-259907.jpeg",
+                    ],
+                    bedRooms: 3,
+                    bathroom: 2,
+                    size: 1400,
+                    latitude: 48.8566,
+                    longitude: 2.3522,
+                    city: "Paris",
+                    address: "12 Rue de Rivoli",
+                    school: "200m away",
+                    bus: "120m away",
+                    restaurant: "60m away",
+                    description:
+                              "A modern and spacious house perfect for families located near key city spots.",
+          },
+
+          {
+                    id: 5,
+                    title: "City View Apartment",
+                    price: 1350,
+                    images: [
+                              "https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg",
+                              "https://images.pexels.com/photos/276724/pexels-photo-276724.jpeg",
+                              "https://images.pexels.com/photos/259962/pexels-photo-259962.jpeg",
+                              "https://images.pexels.com/photos/2062426/pexels-photo-2062426.jpeg",
+                    ],
+                    bedRooms: 2,
+                    bathroom: 2,
+                    size: 950,
+                    latitude: 52.52,
+                    longitude: 13.405,
+                    city: "Berlin",
+                    address: "89 Alexanderplatz",
+                    school: "400m away",
+                    bus: "200m away",
+                    restaurant: "70m away",
+                    description:
+                              "Bright apartment with panoramic city views and top-notch facilities.",
+          },
+
+          {
+                    id: 6,
+                    title: "Minimalist Condo",
+                    price: 1100,
+                    images: [
+                              "https://images.pexels.com/photos/259803/pexels-photo-259803.jpeg",
+                              "https://images.pexels.com/photos/271624/pexels-photo-271624.jpeg",
+                              "https://images.pexels.com/photos/276551/pexels-photo-276551.jpeg",
+                              "https://images.pexels.com/photos/2102587/pexels-photo-2102587.jpeg",
+                    ],
+                    bedRooms: 1,
+                    bathroom: 1,
+                    size: 520,
+                    latitude: 35.6895,
+                    longitude: 139.6917,
+                    city: "Tokyo",
+                    address: "2-4 Shibuya Crossing",
+                    school: "380m away",
+                    bus: "140m away",
+                    restaurant: "60m away",
+                    description:
+                              "Minimalist living space with a beautiful interior inspired by Japanese design.",
+          },
+
+          {
+                    id: 7,
+                    title: "Suburban Villa",
+                    price: 2500,
+                    images: [
+                              "https://images.pexels.com/photos/1643383/pexels-photo-1643383.jpeg",
+                              "https://images.pexels.com/photos/106399/pexels-photo-106399.jpeg",
+                              "https://images.pexels.com/photos/2102587/pexels-photo-2102587.jpeg",
+                              "https://images.pexels.com/photos/1396122/pexels-photo-1396122.jpeg",
+                    ],
+                    bedRooms: 5,
+                    bathroom: 4,
+                    size: 2800,
+                    latitude: 41.9028,
+                    longitude: 12.4964,
+                    city: "Rome",
+                    address: "55 Via del Corso",
+                    school: "600m away",
+                    bus: "300m away",
+                    restaurant: "90m away",
+                    description:
+                              "A luxurious villa ideal for large families, located in a peaceful suburban area.",
+          },
+
+          {
+                    id: 8,
+                    title: "Beachside Cottage",
+                    price: 1600,
+                    images: [
+                              "https://images.pexels.com/photos/261102/pexels-photo-261102.jpeg",
+                              "https://images.pexels.com/photos/259588/pexels-photo-259588.jpeg",
+                              "https://images.pexels.com/photos/276551/pexels-photo-276551.jpeg",
+                              "https://images.pexels.com/photos/1719644/pexels-photo-1719644.jpeg",
+                    ],
+                    bedRooms: 2,
+                    bathroom: 1,
+                    size: 780,
+                    latitude: 36.8508,
+                    longitude: -75.9779,
+                    city: "Virginia Beach",
+                    address: "Oceanfront Drive 33",
+                    school: "450m away",
+                    bus: "180m away",
+                    restaurant: "100m away",
+                    description:
+                              "Cozy beachside cottage perfect for vacations with soothing sea views.",
+          },
+
+          {
+                    id: 9,
+                    title: "Urban Loft",
+                    price: 1450,
+                    images: [
+                              "https://images.pexels.com/photos/373534/pexels-photo-373534.jpeg",
+                              "https://images.pexels.com/photos/276724/pexels-photo-276724.jpeg",
+                              "https://images.pexels.com/photos/259962/pexels-photo-259962.jpeg",
+                              "https://images.pexels.com/photos/271624/pexels-photo-271624.jpeg",
+                    ],
+                    bedRooms: 2,
+                    bathroom: 1,
+                    size: 1100,
+                    latitude: 37.7749,
+                    longitude: -122.4194,
+                    city: "San Francisco",
+                    address: "Market Street 745",
+                    school: "500m away",
+                    bus: "200m away",
+                    restaurant: "100m away",
+                    description:
+                              "Stylish urban loft with high ceilings and modern industrial decor.",
+          },
+
+          {
+                    id: 10,
+                    title: "Mountain Cabin",
+                    price: 1300,
+                    images: [
+                              "https://images.pexels.com/photos/771006/pexels-photo-771006.jpeg",
+                              "https://images.pexels.com/photos/276551/pexels-photo-276551.jpeg",
+                              "https://images.pexels.com/photos/259907/pexels-photo-259907.jpeg",
+                              "https://images.pexels.com/photos/1643383/pexels-photo-1643383.jpeg",
+                    ],
+                    bedRooms: 2,
+                    bathroom: 1,
+                    size: 900,
+                    latitude: 39.7392,
+                    longitude: -104.9903,
+                    city: "Denver",
+                    address: "Rocky Ridge Road",
+                    school: "1km away",
+                    bus: "300m away",
+                    restaurant: "200m away",
+                    description:
+                              "Warm wooden cabin located in the mountains with stunning nature views.",
+          },
+
+          {
+                    id: 11,
+                    title: "Garden Villa",
+                    price: 2000,
+                    images: [
+                              "https://images.pexels.com/photos/1643383/pexels-photo-1643383.jpeg",
+                              "https://images.pexels.com/photos/2102587/pexels-photo-2102587.jpeg",
+                              "https://images.pexels.com/photos/259588/pexels-photo-259588.jpeg",
+                              "https://images.pexels.com/photos/1396122/pexels-photo-1396122.jpeg",
+                    ],
+                    bedRooms: 3,
+                    bathroom: 2,
+                    size: 1700,
+                    latitude: 28.6139,
+                    longitude: 77.209,
+                    city: "New Delhi",
+                    address: "Green Park Avenue",
+                    school: "300m away",
+                    bus: "150m away",
+                    restaurant: "70m away",
+                    description:
+                              "A villa surrounded by greenery, offering peace and comfort in a city setting.",
+          },
+
+          {
+                    id: 12,
+                    title: "Downtown Residence",
+                    price: 1550,
+                    images: [
+                              "https://images.pexels.com/photos/259962/pexels-photo-259962.jpeg",
+                              "https://images.pexels.com/photos/2102587/pexels-photo-2102587.jpeg",
+                              "https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg",
+                              "https://images.pexels.com/photos/276551/pexels-photo-276551.jpeg",
+                    ],
+                    bedRooms: 2,
+                    bathroom: 2,
+                    size: 960,
+                    latitude: 43.6532,
+                    longitude: -79.3832,
+                    city: "Toronto",
+                    address: "King Street W",
+                    school: "350m away",
+                    bus: "200m away",
+                    restaurant: "90m away",
+                    description:
+                              "Comfortable urban home with modern design and easy access to downtown attractions.",
+          },
+];
+
+export const UserData = [
+          {
+                    "id": 1,
+                    "name": "Sophia Carter",
+                    "role": "Marketing Specialist",
+                    "image": "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e"
+          },
+          {
+                    "id": 2,
+                    "name": "Liam Anderson",
+                    "role": "Software Engineer",
+                    "image": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e"
+          },
+          {
+                    "id": 3,
+                    "name": "Emma Johnson",
+                    "role": "Product Manager",
+                    "image": "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde"
+          },
+          {
+                    "id": 4,
+                    "name": "Noah Williams",
+                    "role": "UI/UX Designer",
+                    "image": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d"
+          },
+          {
+                    "id": 5,
+                    "name": "Ava Brown",
+                    "role": "Business Analyst",
+                    "image": "https://images.unsplash.com/photo-1544725176-7c40e5a2c9f9"
+          },
+          {
+                    "id": 6,
+                    "name": "Oliver Davis",
+                    "role": "DevOps Engineer",
+                    "image": "https://images.unsplash.com/photo-1544005313-94ddf0286df2"
+          },
+          {
+                    "id": 7,
+                    "name": "Isabella Martinez",
+                    "role": "HR Coordinator",
+                    "image": "https://images.unsplash.com/photo-1520813792240-56fc4a3765a7"
+          },
+          {
+                    "id": 8,
+                    "name": "Elijah Taylor",
+                    "role": "Project Lead",
+                    "image": "https://images.unsplash.com/photo-1552058544-f2b08422138a"
+          },
+          {
+                    "id": 9,
+                    "name": "Mia Thompson",
+                    "role": "Content Creator",
+                    "image": "https://images.unsplash.com/photo-1544005313-3bb76fc8c18a"
+          },
+          {
+                    "id": 10,
+                    "name": "James Miller",
+                    "role": "Data Scientist",
+                    "image": "https://images.unsplash.com/photo-1527980965255-d3b416303d12"
+          },
+          {
+                    "id": 11,
+                    "name": "Charlotte Garcia",
+                    "role": "Graphic Designer",
+                    "image": "https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91"
+          },
+          {
+                    "id": 12,
+                    "name": "Benjamin Rodriguez",
+                    "role": "Financial Advisor",
+                    "image": "https://images.unsplash.com/photo-1552374196-c4e7ffc6e126"
+          }
+]
+
+
