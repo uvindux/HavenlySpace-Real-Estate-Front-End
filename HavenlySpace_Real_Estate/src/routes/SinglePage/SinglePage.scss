@@ -1,18 +1,179 @@
-.singlePage{
+.singlePage {
+          width: 100%;
+          padding: 40px 20px;
           display: flex;
-          height:   100%;
-          .details{
-                    flex:3;
-                    background-color: red;
-                    .wrapper{
-                              padding-right: 50px;
-                              display: flex;
-                              flex-direction: column;
-                              gap: 50px;
+          justify-content: center;
+
+          .details {
+                    width: 1200px;
+                    display: flex;
+                    gap: 35px;
+          }
+
+          /* LEFT + GENERAL INFO AREA */
+          .wrapper {
+                    flex: 2;
+
+                    .info {
+                              background: #fff;
+                              padding: 30px;
+                              border-radius: 16px;
+                              box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+                              margin-top: 25px;
+
+                              .top {
+                                        h1 {
+                                                  font-size: 34px;
+                                                  font-weight: 600;
+                                                  margin-bottom: 8px;
+                                        }
+
+                                        .address {
+                                                  color: #666;
+                                                  font-size: 16px;
+                                                  margin-bottom: 5px;
+                                        }
+
+                                        .price {
+                                                  font-size: 22px;
+                                                  font-weight: 700;
+                                                  color: #ff9800;
+                                                  margin-bottom: 20px;
+                                        }
+                              }
+
+                              .userSection {
+                                        display: flex;
+                                        align-items: center;
+                                        gap: 15px;
+                                        padding: 18px 20px;
+                                        border-radius: 14px;
+                                        background: #fafafa;
+                                        border: 1px solid #eee;
+                                        margin-bottom: 25px;
+
+                                        .userImage {
+                                                  width: 60px;
+                                                  height: 60px;
+                                                  border-radius: 50%;
+                                                  object-fit: cover;
+                                        }
+
+                                        h4 {
+                                                  font-size: 18px;
+                                                  margin: 0;
+                                                  font-weight: 600;
+                                        }
+
+                                        p {
+                                                  margin: 0;
+                                                  color: #777;
+                                        }
+                              }
+
+                              .description {
+                                        h3 {
+                                                  font-size: 20px;
+                                                  margin-bottom: 10px;
+                                        }
+
+                                        p {
+                                                  color: #555;
+                                                  line-height: 1.6;
+                                                  font-size: 16px;
+                                        }
+                              }
                     }
           }
-          .features{
-                    flex:1;
-                    background-color: blue;
+
+          /* FEATURES SIDEBAR */
+          .features {
+                    flex: 1;
+                    background: #ffffff;
+                    padding: 28px;
+                    border-radius: 18px;
+                    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.12);
+                    height: fit-content;
+                    position: sticky;
+                    top: 25px;
+
+                    .sectionTitle {
+                              font-size: 22px;
+                              font-weight: 600;
+                              margin-bottom: 25px;
+                    }
+
+                    .featureGroup {
+                              margin-bottom: 30px;
+
+                              .groupTitle {
+                                        font-size: 18px;
+                                        font-weight: 600;
+                                        margin-bottom: 12px;
+                                        padding-left: 12px;
+                                        border-left: 4px solid #ff9800;
+                                        color: #333;
+                              }
+                    }
+
+                    /* The features list */
+                    .featureList {
+                              list-style: none;
+                              padding: 0;
+                              margin: 0;
+
+                              .featureItem {
+                                        display: flex;
+                                        align-items: center;
+                                        gap: 14px;
+                                        padding: 14px 0;
+                                        border-bottom: 1px solid #f2f2f2;
+                                        font-size: 15px;
+                                        transition: 0.2s ease;
+
+                                        &:hover {
+                                                  background: #fafafa;
+                                                  padding-left: 6px;
+                                                  border-radius: 8px;
+                                        }
+
+                                        .icon {
+                                                  font-size: 22px;
+                                                  width: 28px;
+                                                  display: flex;
+                                                  justify-content: center;
+                                        }
+
+                                        b {
+                                                  margin-right: 4px;
+                                                  color: #333;
+                                        }
+                              }
+
+                              .featureItem:last-child {
+                                        border-bottom: none;
+                              }
+                    }
+
+                    /* Map styling */
+                    .mapBox {
+                              margin-top: 20px;
+                              border-radius: 14px;
+                              overflow: hidden;
+                              box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+                    }
+          }
+
+          /* RESPONSIVE */
+          @media (max-width: 992px) {
+                    .details {
+                              flex-direction: column;
+                    }
+
+                    .features {
+                              width: 100%;
+                              position: relative;
+                              top: 0;
+                    }
           }
 }
