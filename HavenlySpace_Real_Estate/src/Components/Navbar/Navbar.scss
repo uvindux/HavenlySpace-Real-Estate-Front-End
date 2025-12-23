@@ -37,6 +37,54 @@ $mobile-breakpoint: 768px;
   &_img{
     width: 150px;
   }
+  //UserSection
+.user {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+
+  .navbar__user-img {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #f2f2f2;
+  }
+
+  .navbar__user-name {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: #333;
+    line-height: 1;
+    white-space: nowrap;
+    transition: color 0.2s ease;
+
+    &:hover {
+      color: #ff7a18; // optional accent color
+    }
+  }
+
+  a {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+}
+@media (max-width: 768px) {
+  .user {
+    .navbar__user-img {
+      width: 28px;
+      height: 28px;
+    }
+
+    .navbar__user-name {
+      font-size: 0.8rem;
+    }
+  }
+}
+  
 
    
 

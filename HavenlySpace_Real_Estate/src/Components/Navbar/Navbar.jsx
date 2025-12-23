@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import './Navbar.scss';
+import { Link } from 'react-router-dom';
+import ProfilePage from '../../routes/profilePage/ProfilePage.jsx';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -11,6 +13,10 @@ const Navbar = () => {
   const closeMenu = () => {
     setIsOpen(false);
   };
+
+  const user = true;
+}
+
 
   return (
     <>
@@ -39,9 +45,21 @@ const Navbar = () => {
             </ul>
 
             <div className="navbar__auth">
-              <button className="navbar__btn navbar__btn--login">Login</button>
-              <button className="navbar__btn navbar__btn--register">Register</button>
-            </div>
+              
+              {user ? (<div className='user'>
+                <img src=" https://images.unsplash.com/photo-1522708323590-d24dbb6b0267" alt="User" className="navbar__user-img" />
+               
+                <Link to="/ProfilePage"> <span className="navbar__user-name">John Doe</span></Link>
+              </div>) : (<><a href="http://"><button className="navbar__btn navbar__btn--login">Login</button></a></>)}
+              {user ? (<div><a href="http://"><button className="navbar__btn navbar__btn--register">Register</button></a>
+              </div>) : (
+                <>
+                  <a href="http://"><button className="navbar__btn navbar__btn--register">Register</button></a>
+               
+                </>
+              )}
+                
+               
           </div>
         </div>
       </nav>
