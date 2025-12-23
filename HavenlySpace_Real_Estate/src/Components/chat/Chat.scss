@@ -1,0 +1,171 @@
+.chat {
+          height: 100%;
+          background-color: #fff7f2; // light beige like screenshot
+          border-radius: 16px;
+          display: flex;
+          padding: 20px;
+
+          .messages {
+                    width: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 14px;
+
+                    h1 {
+                              font-size: 22px;
+                              font-weight: 600;
+                              color: #222;
+                              margin-bottom: 10px;
+                    }
+
+                    // MESSAGE LIST (LEFT SIDE LIST)
+                    .message {
+                              display: flex;
+                              align-items: center;
+                              gap: 14px;
+                              background: #ffffff;
+                              padding: 14px 16px;
+                              border-radius: 12px;
+                              cursor: pointer;
+                              transition: all 0.3s ease;
+                              box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
+
+                              &:hover {
+                                        background-color: #fde68a;
+                              }
+
+                              img {
+                                        width: 44px;
+                                        height: 44px;
+                                        border-radius: 50%;
+                                        object-fit: cover;
+                              }
+
+                              span {
+                                        font-weight: 600;
+                                        font-size: 14px;
+                                        color: #111;
+                                        white-space: nowrap;
+                              }
+
+                              p {
+                                        font-size: 13px;
+                                        color: #666;
+                                        white-space: nowrap;
+                                        overflow: hidden;
+                                        text-overflow: ellipsis;
+                                        max-width: 220px;
+                              }
+                    }
+
+                    // CHAT BOX (RIGHT SIDE)
+                    .chatBox {
+                              margin-top: 16px;
+                              background: #ffffff;
+                              border-radius: 16px;
+                              display: flex;
+                              flex-direction: column;
+                              height: 520px;
+                              box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+
+                              // TOP BAR
+                              .top {
+                                        padding: 14px 16px;
+                                        display: flex;
+                                        justify-content: space-between;
+                                        align-items: center;
+                                        background-color: #fde68a;
+                                        border-radius: 16px 16px 0 0;
+
+                                        .user {
+                                                  display: flex;
+                                                  align-items: center;
+                                                  gap: 10px;
+                                                  font-weight: 600;
+
+                                                  img {
+                                                            width: 36px;
+                                                            height: 36px;
+                                                            border-radius: 50%;
+                                                            object-fit: cover;
+                                                  }
+                                        }
+
+                                        .close {
+                                                  font-size: 18px;
+                                                  cursor: pointer;
+                                                  font-weight: 600;
+                                        }
+                              }
+
+                              // CHAT MESSAGES
+                              .center {
+                                        flex: 1;
+                                        padding: 16px;
+                                        overflow-y: auto;
+                                        display: flex;
+                                        flex-direction: column;
+                                        gap: 14px;
+                                        background-color: #fff7f2;
+
+                                        .chatMessage {
+                                                  max-width: 70%;
+                                                  background: #ffffff;
+                                                  padding: 12px 14px;
+                                                  border-radius: 12px;
+                                                  font-size: 14px;
+                                                  color: #333;
+                                                  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+
+                                                  span {
+                                                            display: block;
+                                                            margin-top: 6px;
+                                                            font-size: 11px;
+                                                            color: #999;
+                                                  }
+
+                                                  &.own {
+                                                            align-self: flex-end;
+                                                            background-color: #fde68a;
+                                                  }
+                                        }
+                              }
+
+                              // INPUT AREA
+                              .bottom {
+                                        display: flex;
+                                        gap: 12px;
+                                        padding: 14px;
+                                        border-top: 1px solid #eee;
+
+                                        textarea {
+                                                  flex: 1;
+                                                  resize: none;
+                                                  border-radius: 10px;
+                                                  border: 1px solid #ddd;
+                                                  padding: 10px 12px;
+                                                  font-size: 14px;
+                                                  outline: none;
+
+                                                  &:focus {
+                                                            border-color: #facc15;
+                                                  }
+                                        }
+
+                                        .send {
+                                                  padding: 0 22px;
+                                                  border-radius: 10px;
+                                                  border: none;
+                                                  background-color: #facc15;
+                                                  font-weight: 600;
+                                                  cursor: pointer;
+                                                  transition: all 0.3s ease;
+
+                                                  &:hover {
+                                                            background-color: #eab308;
+                                                  }
+                                        }
+                              }
+                    }
+          }
+}

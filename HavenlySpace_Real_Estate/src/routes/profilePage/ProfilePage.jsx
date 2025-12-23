@@ -1,6 +1,7 @@
 import React from 'react'
 import List from '../../Components/list/List'
 import './ProfilePage.scss'
+import Chat from '../../Components/chat/Chat'
 
 function ProfilePage() {
   return (
@@ -34,7 +35,7 @@ function ProfilePage() {
       </div>
       <div className="chatContainer">
 
-        <h2>Chat Section</h2>
+        <Chat/>
 
       </div>
                     
