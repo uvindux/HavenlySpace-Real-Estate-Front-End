@@ -72,6 +72,30 @@ $mobile-breakpoint: 768px;
     gap: 8px;
   }
 }
+
+.profile{
+  padding: 12px 24px;
+  background-color:#f7c948 ;
+  cursor: pointer;
+  border: none;
+  position: relative;
+
+  .notification{
+    width:16px;
+    position: absolute;
+    color: white;
+    border-radius: 30px;
+    width: 26px;
+    height: 26px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #c30a1a;
+    top :-8px;
+    right: -8px;
+
+  }
+}
 @media (max-width: 768px) {
   .user {
     .navbar__user-img {

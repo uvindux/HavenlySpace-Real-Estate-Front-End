@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import './Navbar.scss';
 import { Link } from 'react-router-dom';
-import ProfilePage from '../../routes/profilePage/ProfilePage.jsx';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -14,9 +13,8 @@ const Navbar = () => {
     setIsOpen(false);
   };
 
+  // mock auth state
   const user = true;
-}
-
 
   return (
     <>
@@ -26,7 +24,7 @@ const Navbar = () => {
             <img src="/logo.png" alt="Logo" className="navbar__img" />
           </div>
 
-          <button 
+          <button
             className={`navbar__toggle ${isOpen ? 'active' : ''}`}
             onClick={toggleMenu}
             aria-label="Toggle navigation"
@@ -45,28 +43,45 @@ const Navbar = () => {
             </ul>
 
             <div className="navbar__auth">
-              
-              {user ? (<div className='user'>
-                <img src=" https://images.unsplash.com/photo-1522708323590-d24dbb6b0267" alt="User" className="navbar__user-img" />
-               
-                <Link to="/ProfilePage"> <span className="navbar__user-name">John Doe</span></Link>
-              </div>) : (<><a href="http://"><button className="navbar__btn navbar__btn--login">Login</button></a></>)}
-              {user ? (<div><a href="http://"><button className="navbar__btn navbar__btn--register">Register</button></a>
-              </div>) : (
+              {user ? (
+                <div className="user">
+                  <img
+                    src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267"
+                    alt="User"
+                    className="navbar__user-img"
+                  />
+                  <Link to="/profile">
+                    <span className="navbar__user-name">John Doe</span>
+                  </Link>
+
+                  <button className="profile">
+                    <div className="notification">3</div>
+                    <span>Profile</span>
+                  </button>
+                </div>
+              ) : (
                 <>
-                  <a href="http://"><button className="navbar__btn navbar__btn--register">Register</button></a>
-               
+                  <Link to="/login">
+                    <button className="navbar__btn navbar__btn--login">
+                      Login
+                    </button>
+                  </Link>
+
+                  <Link to="/register">
+                    <button className="navbar__btn navbar__btn--register">
+                      Register
+                    </button>
+                  </Link>
                 </>
               )}
-                
-               
+            </div>
           </div>
         </div>
       </nav>
-      
+
       {isOpen && (
-        <div 
-          className="navbar__overlay" 
+        <div
+          className="navbar__overlay"
           onClick={closeMenu}
         />
       )}
