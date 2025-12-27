@@ -9,6 +9,7 @@ import Layout from './routes/layout/Layout.jsx'
 import SinglePage from './routes/SinglePage/SinglePage.jsx'
 import ListPage from './routes/list/ListPage.jsx'
 import ProfilePage from './routes/profilePage/ProfilePage.jsx'
+import AuthenticationPage from './routes/authenticationPage/AuthenticationPage.jsx'
 
 
 
@@ -35,7 +36,14 @@ function App() {
         {
           path: "/profile",
           element:<ProfilePage/>
+        },
+        {
+          path: "/authenticate",
+          element: <AuthenticationPage/>
         }
+       
+
+
 
 
 

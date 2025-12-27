@@ -3,7 +3,8 @@
   gap: 5px;
 
   button {
-    padding: 10px 22px;
+    padding: 30px 52px;
+    height: 28px;
     border: 2px solid #000;
     background: #fff;
     color: #000;  
@@ -32,12 +33,14 @@ form {
   margin-top: 20px;
 
   input {
-    padding: 12px 16px;
+    padding: 18px 16px;
     border: 2px solid #ffffff;
     background: #fff;
     border-radius: 8px;
-    font-size: 15px;
+    font-size: 12px;
     width: 180px;
+    height: 18px;
+   
     transition: all 0.2s ease;
 
     &::placeholder {
@@ -52,7 +55,9 @@ form {
   }
 
   button {
-    padding: 12px 24px;
+    padding: 16px 44px;
+    width: 100px;
+    height: 28px;
     background: #bd942e;
     color: #fff;
     border: none;
