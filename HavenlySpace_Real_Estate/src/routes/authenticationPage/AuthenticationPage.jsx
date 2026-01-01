@@ -1,9 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import './AuthenticationPage.scss';
 import apiRequest from '../../lib/apiRequest.js';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
+import { AuthContext } from '../../context/AuthContext.jsx';
 
 function AuthenticationPage() {
+          const { updateUser } = useContext(AuthContext);
+          const navigate = useNavigate();
           const [isLogin, setIsLogin] = useState(false);
           const [formData, setFormData] = useState({
                     username: '',
@@ -31,13 +35,18 @@ function AuthenticationPage() {
                                         const { username, email, password } = formData;
                                         const response = await apiRequest.post('/auth/register', { username, email, password });
                                         console.log('Registration successful:', response.data);
+                                        window.userDebug = response.data;
+                                        updateUser(response.data);
                                         setIsLogin(true);
                               } else {
                                         // Login
-                                        const { username, password } = formData;
-                                        const response = await apiRequest.post('/auth/login', { username, password });
+                                        const { email, password } = formData;
+                                        const response = await apiRequest.post('/auth/login', { email, password });
                                         console.log('Login successful:', response.data);
-                                        // TODO: handle login success (e.g., save token, redirect)
+                                        window.userDebug = response.data;
+                                        updateUser(response.data);
+                                        // Redirect to user's profile page
+                                        navigate('/profile');
                               }
                     } catch (err) {
                               setError(err.response?.data?.message || 'An error occurred');
@@ -82,7 +91,7 @@ function AuthenticationPage() {
                                                                                 value={formData.email}
                                                                                 onChange={handleInputChange}
                                                                                 required={!isLogin}
-                                                                                disabled={isLogin} // disable email on login form (optional)
+                                                                      // disable email on login form (optional)
                                                                       />
 
                                                                       <input

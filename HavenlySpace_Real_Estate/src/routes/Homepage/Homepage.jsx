@@ -1,10 +1,13 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import './Homepage.scss'
 import SearchBar from '../../Components/SeachBAr/SearchBar.jsx'
 import Navbar from '../../Components/Navbar/Navbar.jsx'
+import { AuthContext } from '../../context/AuthContext.jsx';
 
 
 function Homepage() {
+  const { currentUser } = useContext(AuthContext);
+  console.log(currentUser);
   return (
     <>
       

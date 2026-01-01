@@ -14,7 +14,7 @@ const Navbar = () => {
   };
 
   // mock auth state
-  const user = true;
+  const user = false;
 
   return (
     <>
