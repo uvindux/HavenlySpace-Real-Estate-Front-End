@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import './Navbar.scss';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../context/AuthContext.jsx';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -13,8 +14,7 @@ const Navbar = () => {
     setIsOpen(false);
   };
 
-  // mock auth state
-  const user = false;
+  const { currentUser } = useContext(AuthContext);
 
   return (
     <>
@@ -43,15 +43,15 @@ const Navbar = () => {
             </ul>
 
             <div className="navbar__auth">
-              {user ? (
+              {currentUser ? (
                 <div className="user">
                   <img
-                    src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267"
+                    src={currentUser.profilePic || currentUser.avatar || "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267"}
                     alt="User"
                     className="navbar__user-img"
                   />
                   <Link to="/profile">
-                    <span className="navbar__user-name">John Doe</span>
+                    <span className="navbar__user-name">{currentUser.username || currentUser.user?.username || currentUser.name || 'User'}</span>
                   </Link>
 
                   <button className="profile">
