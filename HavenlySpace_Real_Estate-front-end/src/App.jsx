@@ -2,7 +2,7 @@
 import Navbar from './Components/Navbar/Navbar'
 import './index.scss'
 
-import Homepage from './routes/Homepage/Homepage.jsx'
+import Homepage from './routes/homePage/HomePage.jsx'
 import { createBrowserRouter, RouterProvider } from "react-router-dom"
 
 import Layout from './routes/layout/Layout.jsx'
@@ -10,6 +10,7 @@ import SinglePage from './routes/SinglePage/SinglePage.jsx'
 import ListPage from './routes/list/ListPage.jsx'
 import ProfilePage from './routes/profilePage/ProfilePage.jsx'
 import AuthenticationPage from './routes/authenticationPage/AuthenticationPage.jsx'
+import NewPostPage from './routes/newPostPage/newPostPage.jsx'
 
 
 
@@ -20,28 +21,32 @@ function App() {
 
       path: "/",
       element: <Layout />,
-      children:[
+      children: [
         {
-        path: "/",
-        element: <Homepage />
-      },
+          path: "/",
+          element: <Homepage />
+        },
         {
           path: "/list",
-          element: <ListPage/>
+          element: <ListPage />
         },
         {
           path: "/:id",
-          element: <SinglePage/>
+          element: <SinglePage />
         },
         {
           path: "/profile",
-          element:<ProfilePage/>
+          element: <ProfilePage />
         },
         {
           path: "/authenticate",
-          element: <AuthenticationPage/>
+          element: <AuthenticationPage />
+        },
+        {
+          path: "/add",
+          element: <NewPostPage />
         }
-       
+
 
 
 
@@ -49,12 +54,12 @@ function App() {
 
       ]
     },
-    
+
   ])
 
   return (
     <>
-    
+
       <RouterProvider router={router} />
 
 

@@ -1,74 +1,103 @@
-.type {
-  display: flex;
-  gap: 5px;
+@import "../../routes/layout/responsive.scss";
 
-  button {
-    padding: 30px 52px;
-    height: 28px;
-    border: 2px solid #000;
-    background: #fff;
-    color: #000;  
-    cursor: pointer;
-    font-size: 15px;
-    font-weight: 600;
-    transition: all 0.25s ease;
-    width: 80px;
-    margin-bottom: 5px;
+.searchBar {
+  .type {
 
-    &:hover {
-      background: #000;
-      color: #fff;
-    }
 
-    &.active {
-      background: #000;
-      color: #fff;
-    }
-  }
-}
-form {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  margin-top: 20px;
+    button {
+      padding: 16px 36px;
+      border: 1px solid #999;
+      border-bottom: none;
+      cursor: pointer;
+      background-color: white;
+      text-transform: capitalize;
 
-  input {
-    padding: 18px 16px;
-    border: 2px solid #ffffff;
-    background: #fff;
-    border-radius: 8px;
-    font-size: 12px;
-    width: 180px;
-    height: 18px;
-   
-    transition: all 0.2s ease;
+      &.active {
+        background-color: black;
+        color: white;
+      }
 
-    &::placeholder {
-      color: #666;
-    }
+      &:first-child {
+        border-top-left-radius: 5px;
+        border-right: none;
+      }
 
-    &:focus {
-      border-color: #ffffff;
-      background: #f2f2f2;
-      outline: none;
+      &:last-child {
+        border-top-right-radius: 5px;
+        border-left: none;
+      }
     }
   }
 
-  button {
-    padding: 16px 44px;
-    width: 100px;
-    height: 28px;
-    background: #bd942e;
-    color: #fff;
-    border: none;
-    border-radius: 8px;
-    font-size: 15px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.25s ease;
+  form {
+    border: 1px solid #999;
+    display: flex;
+    justify-content: space-between;
+    height: 64px;
+    gap: 5px;
 
-    &:hover {
-      background: #333;
+    @include sm {
+      flex-direction: column;
+      border: none;
+    }
+
+    input {
+      border: none;
+      padding: 0px 10px;
+      width: 200px;
+
+      @include lg {
+        padding: 0px 5px;
+
+        &:nth-child(2),
+        &:nth-child(3) {
+          width: 140px;
+        }
+      }
+
+      @include md {
+        width: 200px;
+
+        &:nth-child(2),
+        &:nth-child(3) {
+          width: 200px;
+        }
+      }
+
+      @include sm {
+        width: auto;
+
+        &:nth-child(2),
+        &:nth-child(3) {
+          width: auto;
+        }
+
+        padding: 20px;
+        border: 1px solid #999;
+      }
+    }
+
+    a {
+      flex: 1;
+      background-color: #fece51;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      button {
+        border: none;
+        cursor: pointer;
+        background-color: #fece51;
+
+        @include sm {
+          padding: 10px;
+        }
+
+        img {
+          width: 24px;
+          height: 24px;
+        }
+      }
     }
   }
 }

@@ -3,7 +3,7 @@ import List from '../../Components/list/List'
 import './ProfilePage.scss'
 import Chat from '../../Components/chat/Chat'
 import apiRequest from '../../lib/apiRequest'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, Link } from 'react-router-dom'
 import HomePage from '../homePage/HomePage'
 import { AuthContext } from '../../context/AuthContext.jsx';
 import CloudinaryUploadWidget from '../../Components/UploadWidget/CloudinaryUploadWidget.jsx'
@@ -91,7 +91,8 @@ function ProfilePage() {
           <button className='Logout' onClick={handleLogout}>Logout</button>
           <div className="title">
             <h3>My list</h3>
-            <button>Create new post</button>
+            <Link to="/add"><button>Create new post</button></Link>
+
           </div>
           <List />
           <div className="title">

@@ -1,64 +1,115 @@
-import React from 'react'
-import './Filter.scss'
+import { useState } from "react";
+import "./filter.scss";
+import { useSearchParams } from "react-router-dom";
 
 function Filter() {
+  const [searchParams, setSearchParams] = useSearchParams();
+  const [query, setQuery] = useState({
+    type: searchParams.get("type") || "",
+    city: searchParams.get("city") || "",
+    property: searchParams.get("property") || "",
+    minPrice: searchParams.get("minPrice") || "",
+    maxPrice: searchParams.get("maxPrice") || "",
+    bedroom: searchParams.get("bedroom") || "",
+  });
+
+  const handleChange = (e) => {
+    setQuery({
+      ...query,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleFilter = () => {
+    setSearchParams(query);
+  };
+
   return (
     <div className="filter">
-      <h1>Search results for <b>London</b></h1>
-
+      <h1>
+        Search results for <b>{searchParams.get("city")}</b>
+      </h1>
       <div className="top">
         <div className="item">
-          <label>Location</label>
-          <input type="text" placeholder="City Location" />
+          <label htmlFor="city">Location</label>
+          <input
+            type="text"
+            id="city"
+            name="city"
+            placeholder="City Location"
+            onChange={handleChange}
+            defaultValue={query.city}
+          />
         </div>
       </div>
-
       <div className="bottom">
         <div className="item">
-          <label>Type</label>
-          <select>
-            <option>any</option>
-            <option>Buy</option>
-            <option>Rent</option>
+          <label htmlFor="type">Type</label>
+          <select
+            name="type"
+            id="type"
+            onChange={handleChange}
+            defaultValue={query.type}
+          >
+            <option value="">any</option>
+            <option value="buy">Buy</option>
+            <option value="rent">Rent</option>
           </select>
         </div>
-
         <div className="item">
-          <label>Property</label>
-          <select>
-            <option>any</option>
-            <option>Apartment</option>
-            <option>House</option>
-            <option>Condo</option>
-            <option>Land</option>
+          <label htmlFor="property">Property</label>
+          <select
+            name="property"
+            id="property"
+            onChange={handleChange}
+            defaultValue={query.property}
+          >
+            <option value="">any</option>
+            <option value="apartment">Apartment</option>
+            <option value="house">House</option>
+            <option value="condo">Condo</option>
+            <option value="land">Land</option>
           </select>
         </div>
-
         <div className="item">
-          <label>Min Price</label>
-          <input type="number" placeholder="any" />
+          <label htmlFor="minPrice">Min Price</label>
+          <input
+            type="number"
+            id="minPrice"
+            name="minPrice"
+            placeholder="any"
+            onChange={handleChange}
+            defaultValue={query.minPrice}
+          />
         </div>
-
         <div className="item">
-          <label>Max Price</label>
-          <input type="number" placeholder="any" />
+          <label htmlFor="maxPrice">Max Price</label>
+          <input
+            type="text"
+            id="maxPrice"
+            name="maxPrice"
+            placeholder="any"
+            onChange={handleChange}
+            defaultValue={query.maxPrice}
+          />
         </div>
-
         <div className="item">
-          <label>Bedroom</label>
-          <input type="text" placeholder="Any" />
+          <label htmlFor="bedroom">Bedroom</label>
+          <input
+            type="text"
+            id="bedroom"
+            name="bedroom"
+            placeholder="any"
+            onChange={handleChange}
+            defaultValue={query.bedroom}
+          />
         </div>
-
-        <button className="SearchButton">
-          <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <circle cx="11" cy="11" r="8" strokeWidth="2" />
-            <line x1="21" y1="21" x2="16.65" y2="16.65" strokeWidth="2" />
-          </svg>
+        <button onClick={handleFilter}>
+          <img src="/search.png" alt="" />
         </button>
       </div>
     </div>
-
-  )
+  );
 }
 
-export default Filter
+export default Filter;

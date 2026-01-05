@@ -1,42 +1,71 @@
-import React, { useState } from 'react'
-import "./SearchBar.scss";
+import { useState } from "react";
+import "./searchBar.scss";
+import { Link } from "react-router-dom";
+
+const types = ["buy", "rent"];
 
 function SearchBar() {
-          const types = ["Buy", "Rent"];
-          const [query, setquery] = useState({
-                    type: "Buy",
-                    location: "",
-                    minPrice: "",
-                    maxPrice: ""
+          const [query, setQuery] = useState({
+                    type: "buy",
+                    city: "",
+                    minPrice: 0,
+                    maxPrice: 0,
           });
 
-          const SwitchType = (val) => {
-                    setquery(prev => ({ ...prev, type: val }));
+          const switchType = (val) => {
+                    setQuery((prev) => ({ ...prev, type: val }));
+          };
+
+          const handleChange = (e) => {
+                    setQuery((prev) => ({ ...prev, [e.target.name]: e.target.value }));
           };
 
           return (
-<div>
-                    <div className="type">
-                              {types.map((type) => (
-                                        <button
-                                                  key={type}
-                                                  onClick={() => SwitchType(type)}
-                                                  className={query.type === type ? "active" : ""}
+                    <div className="searchBar">
+                              <div className="type">
+                                        {types.map((type) => (
+                                                  <button
+                                                            key={type}
+                                                            onClick={() => switchType(type)}
+                                                            className={query.type === type ? "active" : ""}
+                                                  >
+                                                            {type}
+                                                  </button>
+                                        ))}
+                              </div>
+                              <form>
+                                        <input
+                                                  type="text"
+                                                  name="city"
+                                                  placeholder="City"
+                                                  onChange={handleChange}
+                                        />
+                                        <input
+                                                  type="number"
+                                                  name="minPrice"
+                                                  min={0}
+                                                  max={10000000}
+                                                  placeholder="Min Price"
+                                                  onChange={handleChange}
+                                        />
+                                        <input
+                                                  type="number"
+                                                  name="maxPrice"
+                                                  min={0}
+                                                  max={10000000}
+                                                  placeholder="Max Price"
+                                                  onChange={handleChange}
+                                        />
+                                        <Link
+                                                  to={`/list?type=${query.type}&city=${query.city}&minPrice=${query.minPrice}&maxPrice=${query.maxPrice}`}
                                         >
-                                                  {type}
-                                        </button>
-                              ))}
+                                                  <button>
+                                                            <img src="/search.png" alt="" />
+                                                  </button>
+                                        </Link>
+                              </form>
                     </div>
-    
-
-                    <form action="">
-                              <input type="text" name='location' placeholder='CityLocation' />
-                              <input type="number " name='MinPrice' min={0} max={10000} placeholder='Min Price' />
-                              <input type="number" name='MaxPrice' min={0} max={10000} placeholder='Max Price' />
-                              <button>Search</button>
-                    </form>
-                    </div >
-          )
+          );
 }
 
-export default SearchBar
+export default SearchBar;

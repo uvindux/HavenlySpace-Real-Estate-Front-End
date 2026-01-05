@@ -1,179 +1,226 @@
+@import "../layout/responsive.scss";
+
 .singlePage {
-          width: 100%;
-          padding: 40px 20px;
           display: flex;
-          justify-content: center;
+          height: 100%;
+
+          @include md {
+                    flex-direction: column;
+                    overflow: scroll;
+          }
 
           .details {
-                    width: 1200px;
-                    display: flex;
-                    gap: 35px;
-          }
+                    flex: 3;
+                    height: 100%;
+                    overflow-y: scroll;
 
-          /* LEFT + GENERAL INFO AREA */
-          .wrapper {
-                    flex: 2;
-
-                    .info {
-                              background: #fff;
-                              padding: 30px;
-                              border-radius: 16px;
-                              box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
-                              margin-top: 25px;
-
-                              .top {
-                                        h1 {
-                                                  font-size: 34px;
-                                                  font-weight: 600;
-                                                  margin-bottom: 8px;
-                                        }
-
-                                        .address {
-                                                  color: #666;
-                                                  font-size: 16px;
-                                                  margin-bottom: 5px;
-                                        }
-
-                                        .price {
-                                                  font-size: 22px;
-                                                  font-weight: 700;
-                                                  color: #ff9800;
-                                                  margin-bottom: 20px;
-                                        }
-                              }
-
-                              .userSection {
-                                        display: flex;
-                                        align-items: center;
-                                        gap: 15px;
-                                        padding: 18px 20px;
-                                        border-radius: 14px;
-                                        background: #fafafa;
-                                        border: 1px solid #eee;
-                                        margin-bottom: 25px;
-
-                                        .userImage {
-                                                  width: 60px;
-                                                  height: 60px;
-                                                  border-radius: 50%;
-                                                  object-fit: cover;
-                                        }
-
-                                        h4 {
-                                                  font-size: 18px;
-                                                  margin: 0;
-                                                  font-weight: 600;
-                                        }
-
-                                        p {
-                                                  margin: 0;
-                                                  color: #777;
-                                        }
-                              }
-
-                              .description {
-                                        h3 {
-                                                  font-size: 20px;
-                                                  margin-bottom: 10px;
-                                        }
-
-                                        p {
-                                                  color: #555;
-                                                  line-height: 1.6;
-                                                  font-size: 16px;
-                                        }
-                              }
-                    }
-          }
-
-          /* FEATURES SIDEBAR */
-          .features {
-                    flex: 1;
-                    background: #ffffff;
-                    padding: 28px;
-                    border-radius: 18px;
-                    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.12);
-                    height: fit-content;
-                    position: sticky;
-                    top: 25px;
-
-                    .sectionTitle {
-                              font-size: 22px;
-                              font-weight: 600;
-                              margin-bottom: 25px;
+                    @include md {
+                              flex: none;
+                              height: max-content;
+                              margin-bottom: 50px;
                     }
 
-                    .featureGroup {
-                              margin-bottom: 30px;
+                    .wrapper {
+                              padding-right: 50px;
 
-                              .groupTitle {
-                                        font-size: 18px;
-                                        font-weight: 600;
-                                        margin-bottom: 12px;
-                                        padding-left: 12px;
-                                        border-left: 4px solid #ff9800;
-                                        color: #333;
+                              @include lg {
+                                        padding-right: 20px;
                               }
-                    }
 
-                    /* The features list */
-                    .featureList {
-                              list-style: none;
-                              padding: 0;
-                              margin: 0;
+                              @include md {
+                                        padding-right: 0px;
+                              }
 
-                              .featureItem {
-                                        display: flex;
-                                        align-items: center;
-                                        gap: 14px;
-                                        padding: 14px 0;
-                                        border-bottom: 1px solid #f2f2f2;
-                                        font-size: 15px;
-                                        transition: 0.2s ease;
+                              .info {
+                                        margin-top: 50px;
 
-                                        &:hover {
-                                                  background: #fafafa;
-                                                  padding-left: 6px;
-                                                  border-radius: 8px;
-                                        }
-
-                                        .icon {
-                                                  font-size: 22px;
-                                                  width: 28px;
+                                        .top {
                                                   display: flex;
-                                                  justify-content: center;
+                                                  justify-content: space-between;
+
+                                                  @include sm {
+                                                            flex-direction: column;
+                                                            gap: 20px;
+                                                  }
+
+                                                  .post {
+                                                            display: flex;
+                                                            flex-direction: column;
+                                                            gap: 20px;
+
+                                                            h1 {
+                                                                      font-weight: 400;
+                                                            }
+
+                                                            .address {
+                                                                      display: flex;
+                                                                      gap: 5px;
+                                                                      align-items: center;
+                                                                      color: #888;
+                                                                      font-size: 14px;
+
+                                                                      img {
+                                                                                width: 16px;
+                                                                                height: 16px;
+                                                                      }
+                                                            }
+
+                                                            .price {
+                                                                      padding: 5px;
+                                                                      background-color: rgba(254, 205, 81, 0.438);
+                                                                      border-radius: 5px;
+                                                                      width: max-content;
+                                                                      font-size: 20px;
+                                                                      font-weight: 300;
+                                                            }
+                                                  }
+
+                                                  .user {
+                                                            display: flex;
+                                                            flex-direction: column;
+                                                            align-items: center;
+                                                            justify-content: center;
+                                                            gap: 20px;
+                                                            padding: 0px 50px;
+                                                            border-radius: 10px;
+                                                            background-color: rgba(254, 205, 81, 0.209);
+                                                            font-weight: 600;
+
+                                                            @include sm {
+                                                                      padding: 20px 50px;
+                                                            }
+
+                                                            img {
+                                                                      width: 50px;
+                                                                      height: 50px;
+                                                                      border-radius: 50%;
+                                                                      object-fit: cover;
+                                                            }
+                                                  }
                                         }
 
-                                        b {
-                                                  margin-right: 4px;
-                                                  color: #333;
+                                        .bottom {
+                                                  margin-top: 50px;
+                                                  color: #555;
+                                                  line-height: 20px;
                                         }
                               }
-
-                              .featureItem:last-child {
-                                        border-bottom: none;
-                              }
-                    }
-
-                    /* Map styling */
-                    .mapBox {
-                              margin-top: 20px;
-                              border-radius: 14px;
-                              overflow: hidden;
-                              box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
                     }
           }
 
-          /* RESPONSIVE */
-          @media (max-width: 992px) {
-                    .details {
-                              flex-direction: column;
+          .features {
+                    flex: 2;
+                    background-color: #fcf5f3;
+                    height: 100%;
+                    overflow-y: scroll;
+
+                    @include md {
+                              flex: none;
+                              height: max-content;
+                              margin-bottom: 50px;
                     }
 
-                    .features {
-                              width: 100%;
-                              position: relative;
-                              top: 0;
+                    .wrapper {
+                              padding: 0px 20px;
+                              display: flex;
+                              flex-direction: column;
+                              gap: 20px;
+
+                              @include md {
+                                        padding: 20px;
+                              }
+
+                              img {
+                                        width: 24px;
+                                        height: 24px;
+                              }
+
+                              .title {
+                                        font-weight: bold;
+                                        font-size: 18px;
+                                        margin-bottom: 10px;
+                              }
+
+                              .feature {
+                                        display: flex;
+                                        align-items: center;
+                                        gap: 10px;
+
+                                        img {
+                                                  background-color: rgba(254, 205, 81, 0.209);
+                                        }
+
+                                        .featureText {
+                                                  span {
+                                                            font-weight: bold;
+                                                  }
+
+                                                  p {
+                                                            font-size: 14px;
+                                                  }
+                                        }
+                              }
+
+                              .listVertical {
+                                        display: flex;
+                                        flex-direction: column;
+                                        gap: 20px;
+                                        padding: 20px 10px;
+                                        background-color: white;
+                                        border-radius: 10px;
+                              }
+
+                              .listHorizontal {
+                                        display: flex;
+                                        justify-content: space-between;
+                                        padding: 20px 10px;
+                                        background-color: white;
+                                        border-radius: 10px;
+                              }
+
+                              .sizes {
+                                        display: flex;
+                                        justify-content: space-between;
+
+                                        @include lg {
+                                                  font-size: 12px;
+                                        }
+
+                                        .size {
+                                                  display: flex;
+                                                  align-items: center;
+                                                  gap: 10px;
+                                                  background-color: white;
+                                                  padding: 10px;
+                                                  border-radius: 5px;
+                                        }
+                              }
+
+                              .mapContainer {
+                                        width: 100%;
+                                        height: 200px;
+                              }
+
+                              .buttons {
+                                        display: flex;
+                                        justify-content: space-between;
+
+                                        button {
+                                                  padding: 20px;
+                                                  display: flex;
+                                                  align-items: center;
+                                                  gap: 5px;
+                                                  background-color: white;
+                                                  border: 1px solid #fece51;
+                                                  border-radius: 5px;
+                                                  cursor: pointer;
+
+                                                  img {
+                                                            width: 16px;
+                                                            height: 16px;
+                                                  }
+                                        }
+                              }
                     }
           }
 }

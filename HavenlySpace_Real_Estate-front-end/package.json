@@ -12,8 +12,11 @@
   "dependencies": {
     "@material-tailwind/react": "^2.1.10",
     "axios": "^1.13.2",
+    "dompurify": "^3.3.1",
+    "draft-js": "^0.11.7",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
+    "react-draft-wysiwyg": "^1.15.0",
     "react-router-dom": "^7.9.6",
     "sass": "^1.94.1"
   },
