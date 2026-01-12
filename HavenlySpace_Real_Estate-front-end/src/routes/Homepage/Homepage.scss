@@ -1,47 +1,785 @@
+// Color Variables
+$background-color: #f5f7fa;
+$primary-color: #f7c948;
+
+.homepage-container {
+          width: 100%;
+          overflow-x: hidden;
+}
+
+// Hero Section - Modern Advanced Design
 .HomePage {
           display: flex;
-          background-color: whitesmoke;
-          height: 100%;
+          background: linear-gradient(135deg, #ffffff 0%, $background-color 100%);
+          height: 100vh;
+          min-height: 700px;
+          position: relative;
+          overflow: hidden;
 
-          .textContainer{
+          // Animated background elements
+          &::before {
+                    content: '';
+                    position: absolute;
+                    width: 600px;
+                    height: 600px;
+                    background: radial-gradient(circle, rgba($primary-color, 0.15) 0%, transparent 70%);
+                    border-radius: 50%;
+                    top: -200px;
+                    right: -100px;
+                    animation: float 6s ease-in-out infinite;
+          }
+
+          &::after {
+                    content: '';
+                    position: absolute;
+                    width: 400px;
+                    height: 400px;
+                    background: radial-gradient(circle, rgba($primary-color, 0.5) 25%, transparent 70%);
+                    border-radius: 50%;
+                    bottom: -150px;
+                    left: -100px;
+                    animation: float 8s ease-in-out infinite reverse;
+          }
+
+          .textContainer {
                     flex: 3;
-                    
-
+                    z-index: 2;
           }
-          .imageContainer{
+
+          .imageContainer {
                     flex: 2;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    position: relative;
+                    z-index: 2;
 
-
+                    &::before {
+                              content: '';
+                              position: absolute;
+                              width: 450px;
+                              height: 450px;
+                              background: linear-gradient(135deg, $primary-color 0%, lighten($primary-color, 60%) 100%);
+                              border-radius: 50%;
+                              filter: blur(100px);
+                              opacity: 0.3;
+                              animation: pulse 4s ease-in-out infinite;
+                    }
           }
-          img{
+
+          img {
                     width: 500px;
+                    max-width: 100%;
+                    height: auto;
+                    border-radius: 20px;
+                    box-shadow:
+                              0 20px 60px rgba(0, 0, 0, 0.15),
+                              0 0 80px rgba($primary-color, 0.3);
+                    position: relative;
+                    z-index: 1;
+                    transition: transform 0.3s ease;
+
+                    &:hover {
+                              transform: scale(1.02) translateY(-5px);
+                    }
           }
-          .Wrapper{
+
+          .Wrapper {
                     width: 90%;
                     display: flex;
                     flex-direction: column;
-                    gap: 20px;
+                    gap: 25px;
                     height: 100%;
-                     padding-left:85px;
+                    padding-left: 85px;
+                    justify-content: center;
 
-                    .MainHeader{
-                              font-size: 40px;
-                              margin-top: 120px;
-                             
+                    .MainHeader {
+                              font-size: 76px;
+                              margin-top: 0;
+                              background: linear-gradient(135deg, #2c3e50 0%, $primary-color 100%);
+                              -webkit-background-clip: text;
+                              -webkit-text-fill-color: transparent;
+                              background-clip: text;
+                              line-height: 1.2;
+                              font-weight: 700;
+                              letter-spacing: -1px;
+                              animation: fadeInUp 0.8s ease-out;
+                    }
+
+                    p {
+                              color: #5a6c7d;
+                              line-height: 1.8;
+                              margin: 10px 0;
+                              font-size: 17px;
+                              max-width: 600px;
+                              animation: fadeInUp 0.8s ease-out 0.2s backwards;
+                    }
+
+                    .explore-btn {
+                              width: fit-content;
+                              padding: 16px 40px;
+                              background: linear-gradient(135deg, $primary-color 0%, lighten($primary-color, 10%) 100%);
+                              color: #2c3e50;
+                              font-weight: 600;
+                              font-size: 16px;
+                              border: none;
+                              border-radius: 50px;
+                              margin-top: 10px;
+                              box-shadow:
+                                        0 10px 30px rgba($primary-color, 0.3),
+                                        0 0 40px rgba($primary-color, 0.1);
+                              transition: all 0.3s ease;
+                              animation: fadeInUp 0.8s ease-out 0.4s backwards;
+
+                              &:hover {
+                                        transform: translateY(-3px);
+                                        box-shadow:
+                                                  0 15px 40px rgba($primary-color, 0.4),
+                                                  0 0 60px rgba($primary-color, 0.2);
+                                        background: linear-gradient(135deg, lighten($primary-color, 10%) 0%, $primary-color 100%);
+                              }
+
+                              &:active {
+                                        transform: translateY(-1px);
+                              }
                     }
           }
-          .Boxes{
+
+          .Boxes {
                     display: flex;
                     justify-content: left;
                     gap: 50px;
-                    
-                    .Number{
-                              font-size: 30px;
+                    margin-top: 30px;
+                    animation: fadeInUp 0.8s ease-out 0.6s backwards;
+
+                    .Box {
+                              position: relative;
+                              padding: 20px 0;
+
+                              &::before {
+                                        content: '';
+                                        position: absolute;
+                                        left: 0;
+                                        top: 0;
+                                        width: 3px;
+                                        height: 0;
+                                        background: linear-gradient(to bottom, $primary-color, transparent);
+                                        transition: height 0.3s ease;
+                              }
+
+                              &:hover::before {
+                                        height: 100%;
+                              }
+
+                              .Number {
+                                        font-size: 36px;
+                                        margin: 0;
+                                        background: linear-gradient(135deg, $primary-color 0%, darken($primary-color, 15%) 100%);
+                                        -webkit-background-clip: text;
+                                        -webkit-text-fill-color: transparent;
+                                        background-clip: text;
+                                        font-weight: 700;
+                                        transition: transform 0.3s ease;
+                              }
+
+                              &:hover .Number {
+                                        transform: scale(1.1);
+                              }
+
+                              .Description {
+                                        font-size: 14px;
+                                        color: #7a8a99;
+                                        font-weight: 300;
+                                        margin-top: 8px;
+                                        letter-spacing: 1px;
+                                        text-transform: uppercase;
+                              }
                     }
-                    .Description{
+          }
+}
+
+// Animations
+@keyframes fadeInUp {
+          from {
+                    opacity: 0;
+                    transform: translateY(30px);
+          }
+
+          to {
+                    opacity: 1;
+                    transform: translateY(0);
+          }
+}
+
+@keyframes float {
+
+          0%,
+          100% {
+                    transform: translateY(0) rotate(0deg);
+          }
+
+          50% {
+                    transform: translateY(-20px) rotate(5deg);
+          }
+}
+
+@keyframes pulse {
+
+          0%,
+          100% {
+                    transform: scale(1);
+                    opacity: 0.3;
+          }
+
+          50% {
+                    transform: scale(1.1);
+                    opacity: 0.4;
+          }
+}
+
+// Section Title
+.section-title {
+          font-size: 42px;
+          text-align: center;
+          margin-bottom: 60px;
+          color: #2c3e50;
+          font-weight: 700;
+          position: relative;
+          display: inline-block;
+          left: 50%;
+          transform: translateX(-50%);
+
+          &::after {
+                    content: '';
+                    position: absolute;
+                    bottom: -15px;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    width: 80px;
+                    height: 4px;
+                    background: linear-gradient(90deg, $primary-color, lighten($primary-color, 15%));
+                    border-radius: 2px;
+          }
+}
+
+// About Section - Modern Design
+.about-section {
+          padding: 100px 100px;
+          background: linear-gradient(135deg, #ffffff 0%, $background-color 100%);
+          position: relative;
+
+          &::before {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    width: 300px;
+                    height: 300px;
+                    background: radial-gradient(circle, rgba($primary-color, 0.08) 0%, transparent 70%);
+                    border-radius: 50%;
+          }
+
+          .about-container {
+                    display: flex;
+                    gap: 80px;
+                    align-items: center;
+                    max-width: 1200px;
+                    margin: 0 auto;
+                    position: relative;
+                    z-index: 1;
+
+                    .about-content {
+                              flex: 1;
+
+                              .about-text {
+                                        color: #5a6c7d;
+                                        line-height: 1.9;
+                                        margin-bottom: 25px;
+                                        font-size: 16px;
+                                        position: relative;
+                                        padding-left: 20px;
+
+                                        &::before {
+                                                  content: '';
+                                                  position: absolute;
+                                                  left: 0;
+                                                  top: 5px;
+                                                  width: 4px;
+                                                  height: calc(100% - 10px);
+                                                  background: linear-gradient(to bottom, $primary-color, transparent);
+                                                  border-radius: 2px;
+                                        }
+                              }
+                    }
+
+                    .about-image {
+                              flex: 1;
+                              position: relative;
+
+                              &::before {
+                                        content: '';
+                                        position: absolute;
+                                        top: -20px;
+                                        right: -20px;
+                                        width: 100%;
+                                        height: 100%;
+                                        border: 3px solid $primary-color;
+                                        border-radius: 10px;
+                                        z-index: -1;
+                              }
+
+                              img {
+                                        width: 100%;
+                                        height: auto;
+                                        border-radius: 10px;
+                                        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+                                        transition: transform 0.3s ease;
+
+                                        &:hover {
+                                                  transform: scale(1.02);
+                                        }
+                              }
+                    }
+          }
+}
+
+// Services Section - Card Design
+.services-section {
+          padding: 100px 100px;
+          background: $background-color;
+          position: relative;
+
+          .section-title {
+                    color: #2c3e50;
+          }
+
+          .services-grid {
+                    display: grid;
+                    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+                    gap: 35px;
+                    max-width: 1200px;
+                    margin: 0 auto;
+
+                    .service-card {
+                              background: #ffffff;
+                              padding: 45px 35px;
+                              border-radius: 15px;
+                              text-align: center;
+                              transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+                              border: 2px solid rgba($primary-color, 0.2);
+                              position: relative;
+                              overflow: hidden;
+
+                              &::before {
+                                        content: '';
+                                        position: absolute;
+                                        top: 0;
+                                        left: 0;
+                                        width: 100%;
+                                        height: 100%;
+                                        background: linear-gradient(135deg, rgba($primary-color, 0.1) 0%, transparent 100%);
+                                        opacity: 0;
+                                        transition: opacity 0.4s ease;
+                              }
+
+                              &:hover {
+                                        transform: translateY(-15px);
+                                        border-color: $primary-color;
+                                        box-shadow:
+                                                  0 25px 50px rgba(0, 0, 0, 0.1),
+                                                  0 0 60px rgba($primary-color, 0.3);
+
+                                        &::before {
+                                                  opacity: 1;
+                                        }
+
+                                        .service-icon {
+                                                  transform: scale(1.2) rotate(5deg);
+                                        }
+                              }
+
+                              .service-icon {
+                                        font-size: 52px;
+                                        margin-bottom: 25px;
+                                        filter: drop-shadow(0 5px 15px rgba($primary-color, 0.3));
+                                        transition: transform 0.4s ease;
+                              }
+
+                              h3 {
+                                        font-size: 24px;
+                                        margin-bottom: 18px;
+                                        color: #2c3e50;
+                                        font-weight: 600;
+                              }
+
+                              p {
+                                        color: #7a8a99;
+                                        line-height: 1.7;
+                                        font-size: 15px;
+                              }
+                    }
+          }
+}
+
+// Testimonials Section
+.testimonials-section {
+          padding: 100px 100px;
+          background: linear-gradient(135deg, #ffffff 0%, $background-color 100%);
+
+          .testimonials-grid {
+                    display: grid;
+                    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+                    gap: 35px;
+                    max-width: 1200px;
+                    margin: 0 auto;
+
+                    .testimonial-card {
+                              background: white;
+                              padding: 35px;
+                              border-radius: 15px;
+                              border-left: 4px solid $primary-color;
+                              box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+                              transition: all 0.3s ease;
+                              position: relative;
+
+                              &::before {
+                                        content: '"';
+                                        position: absolute;
+                                        top: 15px;
+                                        right: 25px;
+                                        font-size: 80px;
+                                        color: rgba($primary-color, 0.1);
+                                        font-family: Georgia, serif;
+                                        line-height: 1;
+                              }
+
+                              &:hover {
+                                        transform: translateY(-5px);
+                                        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+                              }
+
+                              .stars {
+                                        font-size: 20px;
+                                        margin-bottom: 20px;
+                                        filter: drop-shadow(0 2px 4px rgba($primary-color, 0.3));
+                              }
+
+                              .testimonial-text {
+                                        color: #5a6c7d;
+                                        font-style: italic;
+                                        line-height: 1.7;
+                                        margin-bottom: 25px;
+                                        position: relative;
+                                        z-index: 1;
+                              }
+
+                              .testimonial-author {
+                                        h4 {
+                                                  margin: 0;
+                                                  color: #2c3e50;
+                                                  font-size: 18px;
+                                                  font-weight: 600;
+                                        }
+
+                                        p {
+                                                  margin: 5px 0 0 0;
+                                                  color: $primary-color;
+                                                  font-size: 14px;
+                                                  font-weight: 500;
+                                        }
+                              }
+                    }
+          }
+}
+
+// Contact Section
+.contact-section {
+          padding: 100px 100px;
+          background: $background-color;
+          position: relative;
+
+          &::before {
+                    content: '';
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 50%;
+                    background: linear-gradient(to top, rgba($primary-color, 0.05), transparent);
+          }
+
+          .section-title {
+                    color: #2c3e50;
+          }
+
+          .contact-container {
+                    display: flex;
+                    gap: 80px;
+                    max-width: 1200px;
+                    margin: 0 auto;
+                    position: relative;
+                    z-index: 1;
+
+                    .contact-info {
+                              flex: 1;
+
+                              .info-item {
+                                        display: flex;
+                                        gap: 25px;
+                                        margin-bottom: 35px;
+                                        padding: 25px;
+                                        background: #ffffff;
+                                        border-radius: 10px;
+                                        border-left: 3px solid $primary-color;
+                                        transition: all 0.3s ease;
+                                        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+
+                                        &:hover {
+                                                  transform: translateX(10px);
+                                                  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+                                        }
+
+                                        .icon {
+                                                  font-size: 32px;
+                                                  flex-shrink: 0;
+                                                  filter: drop-shadow(0 5px 10px rgba($primary-color, 0.3));
+                                        }
+
+                                        h4 {
+                                                  margin: 0 0 10px 0;
+                                                  color: $primary-color;
+                                                  font-size: 18px;
+                                                  font-weight: 600;
+                                        }
+
+                                        p {
+                                                  margin: 0;
+                                                  color: #5a6c7d;
+                                                  font-size: 15px;
+                                        }
+                              }
+                    }
+
+                    .contact-form {
+                              flex: 1;
+                              display: flex;
+                              flex-direction: column;
+                              gap: 20px;
+
+                              input,
+                              textarea {
+                                        padding: 18px 20px;
+                                        border: 2px solid #e1e8ed;
+                                        background: #ffffff;
+                                        color: #2c3e50;
+                                        border-radius: 10px;
+                                        font-size: 15px;
+                                        font-family: inherit;
+                                        transition: all 0.3s ease;
+
+                                        &::placeholder {
+                                                  color: #a0aec0;
+                                        }
+
+                                        &:focus {
+                                                  outline: none;
+                                                  border-color: $primary-color;
+                                                  background: #ffffff;
+                                                  box-shadow: 0 0 20px rgba($primary-color, 0.2);
+                                        }
+                              }
+
+                              button {
+                                        width: fit-content;
+                                        padding: 16px 40px;
+                                        background: linear-gradient(135deg, $primary-color 0%, lighten($primary-color, 10%) 100%);
+                                        color: #2c3e50;
+                                        font-weight: 600;
+                                        border: none;
+                                        border-radius: 50px;
+                                        box-shadow: 0 10px 30px rgba($primary-color, 0.3);
+                                        transition: all 0.3s ease;
+
+                                        &:hover {
+                                                  transform: translateY(-3px);
+                                                  box-shadow: 0 15px 40px rgba($primary-color, 0.4);
+                                        }
+                              }
+                    }
+          }
+}
+
+// Footer - Modern Light Design
+.footer {
+          background: linear-gradient(135deg, #ffffff 0%, $background-color 100%);
+          color: #2c3e50;
+          padding: 80px 100px 30px;
+          border-top: 2px solid rgba($primary-color, 0.3);
+
+          .footer-content {
+                    display: grid;
+                    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+                    gap: 50px;
+                    max-width: 1200px;
+                    margin: 0 auto 50px;
+
+                    .footer-section {
+                              h3 {
+                                        background: linear-gradient(135deg, $primary-color 0%, darken($primary-color, 15%) 100%);
+                                        -webkit-background-clip: text;
+                                        -webkit-text-fill-color: transparent;
+                                        background-clip: text;
+                                        font-size: 24px;
+                                        font-weight: 700;
+                              }
+
+                              h4 {
+                                        margin-bottom: 25px;
+                                        color: #2c3e50;
+                                        font-size: 18px;
+                                        font-weight: 600;
+                              }
+
+                              p {
+                                        color: #7a8a99;
+                                        line-height: 1.7;
+                              }
+
+                              ul {
+                                        list-style: none;
+                                        padding: 0;
+                                        margin: 0;
+
+                                        li {
+                                                  margin-bottom: 12px;
+
+                                                  a {
+                                                            color: #7a8a99;
+                                                            text-decoration: none;
+                                                            transition: all 0.3s ease;
+                                                            display: inline-block;
+
+                                                            &:hover {
+                                                                      color: $primary-color;
+                                                                      transform: translateX(5px);
+                                                            }
+                                                  }
+                                        }
+                              }
+
+                              .social-links {
+                                        display: flex;
+                                        flex-direction: column;
+                                        gap: 12px;
+
+                                        a {
+                                                  color: #7a8a99;
+                                                  text-decoration: none;
+                                                  transition: all 0.3s ease;
+                                                  padding: 8px 0;
+
+                                                  &:hover {
+                                                            color: $primary-color;
+                                                            transform: translateX(5px);
+                                                  }
+                                        }
+                              }
+                    }
+          }
+
+          .footer-bottom {
+                    text-align: center;
+                    padding-top: 30px;
+                    border-top: 1px solid rgba(0, 0, 0, 0.1);
+
+                    p {
+                              margin: 0;
+                              color: #7a8a99;
+                              font-size: 14px;
+                    }
+          }
+}
+
+// Responsive Design
+@media (max-width: 1024px) {
+          .HomePage {
+                    flex-direction: column;
+                    height: auto;
+                    min-height: auto;
+
+                    .textContainer,
+                    .imageContainer {
+                              flex: 1;
+                    }
+
+                    .Wrapper {
+                              padding: 60px 40px;
+
+                              .MainHeader {
+                                        font-size: 42px;
+                              }
+                    }
+
+                    .imageContainer {
+                              padding: 60px 40px;
+
+                              img {
+                                        width: 100%;
+                              }
+                    }
+          }
+
+          .about-section,
+          .services-section,
+          .testimonials-section,
+          .contact-section,
+          .footer {
+                    padding: 80px 40px;
+          }
+
+          .about-container,
+          .contact-container {
+                    flex-direction: column;
+                    gap: 50px;
+          }
+}
+
+@media (max-width: 768px) {
+          .HomePage .Wrapper {
+                    padding: 40px 20px;
+
+                    .MainHeader {
+                              font-size: 32px;
+                    }
+
+                    p {
                               font-size: 15px;
-                              color: gray;
-                              font-weight: 200;
                     }
+          }
+
+          .Boxes {
+                    flex-direction: column;
+                    gap: 25px !important;
+          }
+
+          .section-title {
+                    font-size: 32px;
+          }
+
+          .about-section,
+          .services-section,
+          .testimonials-section,
+          .contact-section,
+          .footer {
+                    padding: 60px 20px;
+          }
+
+          .footer-content {
+                    grid-template-columns: 1fr;
+          }
+
+          .services-grid,
+          .testimonials-grid {
+                    grid-template-columns: 1fr;
           }
 }
