@@ -10,7 +10,7 @@ import CloudinaryUploadWidget from '../../Components/UploadWidget/CloudinaryUplo
 
 function ProfilePage() {
   const { currentUser, updateUser } = useContext(AuthContext);
-  const [avatar, setavatar] = useState(currentUser?.avatar || "");
+  const [avatar, setavatar] = useState(currentUser?.avatar || currentUser?.user?.avatar || "");
   const navigate = useNavigate();
   const [showModal, setShowModal] = useState(false);
   const [newUsername, setNewUsername] = useState("");
@@ -65,7 +65,11 @@ function ProfilePage() {
           </div>
           <div className='info'>
             <span>Profile Picture:
-              <img src={avatar || "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267"} alt="User image" srcSet="" />
+              <img
+                src={avatar || currentUser?.avatar || currentUser?.user?.avatar || "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267"}
+                alt="User image"
+                srcSet=""
+              />
               <CloudinaryUploadWidget
                 uwConfig={{
                   cloudName: "dhz8jovon",
@@ -78,7 +82,12 @@ function ProfilePage() {
                   setavatar(url);
                   try {
                     const res = await apiRequest.put('/user/update', { avatar: url });
-                    updateUser({ ...currentUser, avatar: res.data.user.avatar });
+                    const updatedAvatar = res.data?.user?.avatar || url;
+                    updateUser({
+                      ...currentUser,
+                      avatar: updatedAvatar,
+                      user: currentUser?.user ? { ...currentUser.user, avatar: updatedAvatar } : currentUser?.user,
+                    });
                   } catch (err) {
                     // Optionally show error
                   }

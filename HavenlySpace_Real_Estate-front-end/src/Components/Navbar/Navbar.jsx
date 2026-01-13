@@ -46,7 +46,12 @@ const Navbar = () => {
               {currentUser ? (
                 <div className="user">
                   <img
-                    src={currentUser.profilePic || currentUser.avatar || "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267"}
+                    src={
+                      currentUser.profilePic ||
+                      currentUser.avatar ||
+                      currentUser.user?.avatar ||
+                      "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267"
+                    }
                     alt="User"
                     className="navbar__user-img"
                   />
