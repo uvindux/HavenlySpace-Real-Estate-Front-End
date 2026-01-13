@@ -5,10 +5,10 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../context/AuthContext.jsx';
 
-function AuthenticationPage() {
+function AuthenticationPage({ defaultMode = 'register' }) {
           const { updateUser } = useContext(AuthContext);
           const navigate = useNavigate();
-          const [isLogin, setIsLogin] = useState(false);
+          const [isLogin, setIsLogin] = useState(defaultMode === 'login');
           const [formData, setFormData] = useState({
                     username: '',
                     email: '',

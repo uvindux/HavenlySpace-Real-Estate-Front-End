@@ -1,14 +1,18 @@
 .ListPage{
           display: flex;
-          height: 100%;
-          width: 2500px;
-          padding-left: 30px;
-          padding-top: 20px;
+          min-height: calc(100vh - 80px);
+          width: 100%;
+          padding: 24px 28px 40px;
+          background: linear-gradient(120deg, #f8fafc 0%, #eef2f7 48%, #f1f5f9 100%);
+}
+.filterComponent{
+          width: 100%;
 }
 .wrapper{
-          padding-right: 50px;
+          width: 100%;
+          padding: 0;
           display: flex;
           flex-direction: column;
-          gap: 50px;
+          gap: 28px;
          
 }

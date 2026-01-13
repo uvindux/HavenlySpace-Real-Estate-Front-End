@@ -38,8 +38,8 @@ const Navbar = () => {
             <ul className="navbar__links">
               <li><a href="#home" onClick={closeMenu}>Home</a></li>
               <li><a href="#about" onClick={closeMenu}>About</a></li>
-              <li><a href="#service" onClick={closeMenu}>Service</a></li>
-              <li><a href="#agent" onClick={closeMenu}>Agent</a></li>
+              <li><a href="#services" onClick={closeMenu}>Services</a></li>
+              <li><a href="#contact" onClick={closeMenu}>Contact</a></li>
             </ul>
 
             <div className="navbar__auth">
@@ -56,7 +56,7 @@ const Navbar = () => {
 
                   <button className="profile">
                     <div className="notification">3</div>
-                    <span>Profile</span>
+                    <Link to="/profile"><span>Profile</span></Link>
                   </button>
                 </div>
               ) : (

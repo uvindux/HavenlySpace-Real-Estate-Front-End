@@ -1,5 +1,8 @@
 import React from 'react';
 import './Homepage.scss';
+import { Link } from 'react-router-dom';
+import Footer from '../../Components/Footer/Footer';
+
 
 
 
@@ -28,7 +31,7 @@ function Homepage() {
   return (
     <div className="homepage-container">
       {/* Hero Section */}
-      <div className="HomePage">
+      <section id="home" className="HomePage">
         <div className="textContainer">
           <div className="Wrapper">
             <h1 className="MainHeader">
@@ -39,10 +42,12 @@ function Homepage() {
               reiciendis quae, nobis nulla sed enim incidunt quam veniam rem! Non,
               accusamus obcaecati dolor odio atque debitis cum impedit assumenda.
             </p>
-            
-            <button  className="explore-btn">
+
+            <Link to="/list"> <button className="explore-btn">
               Explore Now
-            </button>
+            </button></Link>
+            
+           
             <div className="Boxes">
               <div className="Box">
                 <h1 className="Number">16+</h1>
@@ -60,12 +65,12 @@ function Homepage() {
           </div>
         </div>
         <div className="imageContainer">
-          <img src="../../public/bg.png" alt="Real Estate" />
+          <img src="/bg.png" alt="Real Estate" />
         </div>
-      </div>
+      </section>
 
       {/* About Us Section */}
-      <section className="about-section">
+      <section id="about" className="about-section">
         <div className="about-container">
           <div className="about-content">
             <h2 className="section-title">About Us</h2>
@@ -83,13 +88,13 @@ function Homepage() {
             </p>
           </div>
           <div className="about-image">
-            <img src="/api/placeholder/400/300" alt="About Us" />
+            <img src="/bg.png" alt="About Us" />
           </div>
         </div>
       </section>
 
       {/* Services Section */}
-      <section className="services-section">
+      <section id="services" className="services-section">
         <h2 className="section-title">What We Do</h2>
         <div className="services-grid">
           <div className="service-card">
@@ -116,7 +121,7 @@ function Homepage() {
       </section>
 
       {/* Testimonials Section */}
-      <section className="testimonials-section">
+      <section id="testimonials" className="testimonials-section">
         <h2 className="section-title">What Our Clients Say</h2>
         <div className="testimonials-grid">
           {testimonials.map((testimonial, index) => (
@@ -135,7 +140,7 @@ function Homepage() {
       </section>
 
       {/* Contact Section */}
-      <section className="contact-section">
+      <section id="contact" className="contact-section">
         <h2 className="section-title">Get In Touch</h2>
         <div className="contact-container">
           <div className="contact-info">
@@ -172,44 +177,8 @@ function Homepage() {
       </section>
 
       {/* Footer */}
-      <footer className="footer">
-        <div className="footer-content">
-          <div className="footer-section">
-            <h3>Real Estate</h3>
-            <p>Your trusted partner in finding the perfect property.</p>
-          </div>
-          <div className="footer-section">
-            <h4>Quick Links</h4>
-            <ul>
-              <li><a href="#home">Home</a></li>
-              <li><a href="#about">About</a></li>
-              <li><a href="#services">Services</a></li>
-              <li><a href="#contact">Contact</a></li>
-            </ul>
-          </div>
-          <div className="footer-section">
-            <h4>Services</h4>
-            <ul>
-              <li><a href="#buy">Buy Property</a></li>
-              <li><a href="#sell">Sell Property</a></li>
-              <li><a href="#rent">Rent Property</a></li>
-              <li><a href="#manage">Property Management</a></li>
-            </ul>
-          </div>
-          <div className="footer-section">
-            <h4>Follow Us</h4>
-            <div className="social-links">
-              <a href="#facebook">Facebook</a>
-              <a href="#twitter">Twitter</a>
-              <a href="#instagram">Instagram</a>
-              <a href="#linkedin">LinkedIn</a>
-            </div>
-          </div>
-        </div>
-        <div className="footer-bottom">
-          <p>&copy; 2024 Real Estate. All rights reserved.</p>
-        </div>
-      </footer>
+      
+    
     </div>
   );
 }

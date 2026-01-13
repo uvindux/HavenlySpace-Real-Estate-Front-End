@@ -1,0 +1,179 @@
+@use '../../Colors/Colors.scss' as *;
+
+.footer {
+          background: linear-gradient(135deg, #ffffff 0%, $background-color 100%);
+          color: #2c3e50;
+          padding: 80px 100px 30px;
+          border-top: 2px solid rgba($primary-color, 0.3);
+
+          .footer-content {
+                    display: grid;
+                    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+                    gap: 50px;
+                    max-width: 1200px;
+                    margin: 0 auto 50px;
+
+                    .footer-section {
+                              h3 {
+                                        background: linear-gradient(135deg, $primary-color 0%, darken($primary-color, 15%) 100%);
+                                        -webkit-background-clip: text;
+                                        -webkit-text-fill-color: transparent;
+                                        background-clip: text;
+                                        font-size: 24px;
+                                        font-weight: 700;
+                              }
+
+                              h4 {
+                                        margin-bottom: 25px;
+                                        color: #2c3e50;
+                                        font-size: 18px;
+                                        font-weight: 600;
+                              }
+
+                              p {
+                                        color: #7a8a99;
+                                        line-height: 1.7;
+                              }
+
+                              ul {
+                                        list-style: none;
+                                        padding: 0;
+                                        margin: 0;
+
+                                        li {
+                                                  margin-bottom: 12px;
+
+                                                  a {
+                                                            color: #7a8a99;
+                                                            text-decoration: none;
+                                                            transition: all 0.3s ease;
+                                                            display: inline-block;
+
+                                                            &:hover {
+                                                                      color: $primary-color;
+                                                                      transform: translateX(5px);
+                                                            }
+                                                  }
+                                        }
+                              }
+
+                              .social-links {
+                                        display: flex;
+                                        flex-direction: column;
+                                        gap: 12px;
+
+                                        a {
+                                                  color: #7a8a99;
+                                                  text-decoration: none;
+                                                  transition: all 0.3s ease;
+                                                  padding: 8px 0;
+
+                                                  &:hover {
+                                                            color: $primary-color;
+                                                            transform: translateX(5px);
+                                                  }
+                                        }
+                              }
+                    }
+          }
+
+          .footer-bottom {
+                    text-align: center;
+                    padding-top: 30px;
+                    border-top: 1px solid rgba(0, 0, 0, 0.1);
+
+                    p {
+                              margin: 0;
+                              color: #7a8a99;
+                              font-size: 14px;
+                    }
+          }
+}
+
+// Responsive Design
+@media (max-width: 1024px) {
+          .HomePage {
+                    flex-direction: column;
+                    height: auto;
+                    min-height: auto;
+
+                    .textContainer,
+                    .imageContainer {
+                              flex: 1;
+                    }
+
+                    .Wrapper {
+                              padding: 60px 40px;
+
+                              .MainHeader {
+                                        font-size: 42px;
+                              }
+                    }
+
+                    .imageContainer {
+                              padding: 60px 40px;
+
+                              img {
+                                        width: 100%;
+                              }
+                    }
+          }
+
+          .about-section,
+          .services-section,
+          .testimonials-section,
+          .contact-section,
+          .footer {
+                    padding: 80px 40px;
+          }
+
+          .about-container,
+          .contact-container {
+                    flex-direction: column;
+                    gap: 50px;
+          }
+}
+
+@media (max-width: 768px) {
+          .HomePage .Wrapper {
+                    padding: 40px 20px;
+
+                    .MainHeader {
+                              font-size: 32px;
+                    }
+
+                    p {
+                              font-size: 15px;
+                    }
+          }
+
+          .Boxes {
+                    flex-direction: column;
+                    gap: 25px !important;
+          }
+
+          .section-title {
+                    font-size: 32px;
+          }
+
+          .about-section,
+          .services-section,
+          .testimonials-section,
+          .contact-section,
+          .footer {
+                    padding: 60px 20px;
+          }
+
+          .footer-content {
+                    grid-template-columns: 1fr;
+          }
+
+          .services-grid,
+          .testimonials-grid {
+                    grid-template-columns: 1fr;
+          }
+          .contact-container {
+                    flex-direction: column;
+                    gap: 40px;
+          }
+}

@@ -1,5 +1,4 @@
 
-import Navbar from './Components/Navbar/Navbar'
 import './index.scss'
 
 import Homepage from './routes/homePage/HomePage.jsx'
@@ -17,6 +16,7 @@ import NewPostPage from './routes/newPostPage/newPostPage.jsx'
 
 function App() {
   const router = createBrowserRouter([
+  
     {
 
       path: "/",
@@ -43,6 +43,14 @@ function App() {
           element: <AuthenticationPage />
         },
         {
+          path: "/login",
+          element: <AuthenticationPage defaultMode="login" />
+        },
+        {
+          path: "/register",
+          element: <AuthenticationPage defaultMode="register" />
+        },
+        {
           path: "/add",
           element: <NewPostPage />
         }
@@ -54,14 +62,13 @@ function App() {
 
       ]
     },
+   
 
   ])
 
   return (
     <>
-
       <RouterProvider router={router} />
-
 
     </>
   )
