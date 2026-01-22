@@ -1,17 +1,71 @@
 import "./singlePage.scss";
 import Slider from "../../components/slider/Slider";
 import Map from "../../components/map/Map";
-import { useNavigate, useLoaderData } from "react-router-dom";
+import { useNavigate, useLoaderData, useParams } from "react-router-dom";
 import DOMPurify from "dompurify";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useMemo, useState } from "react";
 import { AuthContext } from "../../context/AuthContext";
 import apiRequest from "../../lib/apiRequest";
+import Listdata, { SinglepostsData } from "../../lib/DummyData";
 
 function SinglePage() {
-  const post = useLoaderData();
-  const [saved, setSaved] = useState(post.isSaved);
+  const loaderPost = useLoaderData();
+  const { id } = useParams();
+  const resolvedPost = useMemo(() => {
+    if (loaderPost) return loaderPost;
+    const numericId = Number(id);
+    return (
+      SinglepostsData.find((item) => item.id === numericId) ||
+      Listdata.find((item) => item.id === numericId) ||
+      null
+    );
+  }, [loaderPost, id]);
+
+  const post = useMemo(() => {
+    if (!resolvedPost) return null;
+    const safeNumber = (value) => {
+      if (typeof value === "number") return value;
+      if (typeof value === "string") {
+        const parsed = parseInt(value, 10);
+        return Number.isNaN(parsed) ? 0 : parsed;
+      }
+      return 0;
+    };
+    const user = resolvedPost.user || {
+      avatar: "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267",
+      username: "Agent",
+    };
+    const images =
+      resolvedPost.images ||
+      (resolvedPost.img ? [resolvedPost.img] : ["/bg.png"]);
+    const postDetail = resolvedPost.postDetail || {
+      desc: resolvedPost.description || "",
+      utilities: "owner",
+      pet: "not allowed",
+      income: "Not specified",
+      size: resolvedPost.size || resolvedPost.area || 0,
+      school: safeNumber(resolvedPost.school),
+      bus: safeNumber(resolvedPost.bus),
+      restaurant: safeNumber(resolvedPost.restaurant),
+    };
+    return {
+      ...resolvedPost,
+      images,
+      user,
+      postDetail,
+      isSaved: resolvedPost.isSaved || false,
+      bedRooms: resolvedPost.bedRooms ?? resolvedPost.bedroom ?? 0,
+      bathroom: resolvedPost.bathroom ?? resolvedPost.bathRooms ?? 0,
+    };
+  }, [resolvedPost]);
+
+  const [saved, setSaved] = useState(post?.isSaved || false);
   const { currentUser } = useContext(AuthContext);
   const navigate = useNavigate();
+
+  useEffect(() => {
+    setSaved(post?.isSaved || false);
+  }, [post?.isSaved]);
 
   const handleSave = async () => {
     if (!currentUser) {
@@ -27,6 +81,21 @@ function SinglePage() {
     }
   };
 
+  if (!post) {
+    return (
+      <div className="singlePage">
+        <div className="details">
+          <div className="wrapper">
+            <div className="info">
+              <h2>Listing not found.</h2>
+              <p>Please go back and select another property.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="singlePage">
       <div className="details">
@@ -37,7 +106,7 @@ function SinglePage() {
               <div className="post">
                 <h1>{post.title}</h1>
                 <div className="address">
-                  <img src="/pin.png" alt="" />
+                  <img src="/icons/pin.svg" alt="" />
                   <span>{post.address}</span>
                 </div>
                 <div className="price">$ {post.price}</div>
@@ -61,7 +130,7 @@ function SinglePage() {
           <p className="title">General</p>
           <div className="listVertical">
             <div className="feature">
-              <img src="/utility.png" alt="" />
+              <img src="/icons/utility.svg" alt="" />
               <div className="featureText">
                 <span>Utilities</span>
                 {post.postDetail.utilities === "owner" ? (
@@ -72,7 +141,7 @@ function SinglePage() {
               </div>
             </div>
             <div className="feature">
-              <img src="/pet.png" alt="" />
+              <img src="/icons/pet.svg" alt="" />
               <div className="featureText">
                 <span>Pet Policy</span>
                 {post.postDetail.pet === "allowed" ? (
@@ -83,7 +152,7 @@ function SinglePage() {
               </div>
             </div>
             <div className="feature">
-              <img src="/fee.png" alt="" />
+              <img src="/icons/fee.svg" alt="" />
               <div className="featureText">
                 <span>Income Policy</span>
                 <p>{post.postDetail.income}</p>
@@ -93,22 +162,22 @@ function SinglePage() {
           <p className="title">Sizes</p>
           <div className="sizes">
             <div className="size">
-              <img src="/size.png" alt="" />
+              <img src="/icons/size.svg" alt="" />
               <span>{post.postDetail.size} sqft</span>
             </div>
             <div className="size">
-              <img src="/bed.png" alt="" />
+              <img src="/icons/bed.svg" alt="" />
               <span>{post.bedroom} beds</span>
             </div>
             <div className="size">
-              <img src="/bath.png" alt="" />
+              <img src="/icons/bath.svg" alt="" />
               <span>{post.bathroom} bathroom</span>
             </div>
           </div>
           <p className="title">Nearby Places</p>
           <div className="listHorizontal">
             <div className="feature">
-              <img src="/school.png" alt="" />
+              <img src="/icons/school.svg" alt="" />
               <div className="featureText">
                 <span>School</span>
                 <p>
@@ -120,14 +189,14 @@ function SinglePage() {
               </div>
             </div>
             <div className="feature">
-              <img src="/pet.png" alt="" />
+              <img src="/icons/pet.svg" alt="" />
               <div className="featureText">
                 <span>Bus Stop</span>
                 <p>{post.postDetail.bus}m away</p>
               </div>
             </div>
             <div className="feature">
-              <img src="/fee.png" alt="" />
+              <img src="/icons/fee.svg" alt="" />
               <div className="featureText">
                 <span>Restaurant</span>
                 <p>{post.postDetail.restaurant}m away</p>
@@ -140,7 +209,7 @@ function SinglePage() {
           </div>
           <div className="buttons">
             <button>
-              <img src="/chat.png" alt="" />
+              <img src="/icons/chat.svg" alt="" />
               Send a Message
             </button>
             <button
@@ -149,7 +218,7 @@ function SinglePage() {
                 backgroundColor: saved ? "#fece51" : "white",
               }}
             >
-              <img src="/save.png" alt="" />
+              <img src="/icons/save.svg" alt="" />
               {saved ? "Place Saved" : "Save the Place"}
             </button>
           </div>

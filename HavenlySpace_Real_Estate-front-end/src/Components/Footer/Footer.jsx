@@ -6,7 +6,7 @@ function Footer() {
             <footer className="footer">
                       <div className="footer-content">
                                 <div className="footer-section">
-                                          <h3>Real Estate</h3>
+                                          <h3>Real Estate website</h3>
                                           <p>Your trusted partner in finding the perfect property.</p>
                                 </div>
                                 <div className="footer-section">

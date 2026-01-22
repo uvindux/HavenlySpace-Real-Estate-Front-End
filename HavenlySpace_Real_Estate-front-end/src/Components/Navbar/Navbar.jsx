@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { AuthContext } from '../../context/AuthContext.jsx';
 
 const Navbar = () => {
+  
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -36,7 +37,7 @@ const Navbar = () => {
 
           <div className={`navbar__menu ${isOpen ? 'active' : ''}`}>
             <ul className="navbar__links">
-              <li><a href="#home" onClick={closeMenu}>Home</a></li>
+              <li><a href="/" onClick={closeMenu}>Home</a></li>
               <li><a href="#about" onClick={closeMenu}>About</a></li>
               <li><a href="#services" onClick={closeMenu}>Services</a></li>
               <li><a href="#contact" onClick={closeMenu}>Contact</a></li>
